@@ -125,29 +125,56 @@ export default function Home() {
   }, [language]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0A0F1F] text-white overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-[#0A0F1F] text-white overflow-hidden critical-content">
       <ParticlesBackground />
 
       {/* Main Content */}
       <main className="flex-1 px-6 pb-12 relative z-10">
         {/* 标题和搜索 */}
-        <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto pt-6 sm:pt-8">
-          <motion.h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto pt-6 sm:pt-8 homepage-hero">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight transform-gpu"
+            initial={{ opacity: 0, transform: "translate3d(0, -20px, 0)" }}
+            animate={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+            transition={{ duration: 0.8 }}
+            style={{
+              willChange: "transform, opacity",
+              backfaceVisibility: "hidden",
+            }}
+          >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#00A8FF]">SCAI</span> - {t("home.title").split(" - ")[1] || "Scientific AI Collaboration Framework"}
           </motion.h1>
-          <motion.p className="text-xl opacity-90 max-w-3xl mx-auto mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }}>
+          <motion.p
+            className="text-xl opacity-90 max-w-3xl mx-auto mb-8 transform-gpu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            style={{
+              willChange: "opacity",
+              backfaceVisibility: "hidden",
+            }}
+          >
             {t("home.subtitle")}
           </motion.p>
-          <motion.div className="w-full max-w-2xl mx-auto" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
+          <motion.div
+            className="w-full max-w-2xl mx-auto transform-gpu"
+            initial={{ opacity: 0, transform: "translate3d(0, 20px, 0)" }}
+            animate={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            style={{
+              willChange: "transform, opacity",
+              backfaceVisibility: "hidden",
+            }}
+          >
             <Search />
-            <button className="mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-[#00F0FF] to-[#0062FF] text-[#0A0F1F] font-bold text-lg shadow-lg hover:shadow-[#00F0FF]/30 transition-all" onClick={() => navigate("/token")}>
+            <button className="mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-[#00F0FF] to-[#0062FF] text-[#0A0F1F] font-bold text-lg shadow-lg hover:shadow-[#00F0FF]/30 btn-optimized" onClick={() => navigate("/token")}>
               {t("home.tokenButton")}
             </button>
           </motion.div>
         </div>
 
         {/* 功能卡片 - 对称布局 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 stagger-container">
           {featureTranslations.map((feature, index) => (
             <FeatureCard key={feature.title} title={feature.title} description={feature.description} icon={feature.icon} color={feature.color} gradient={feature.gradient} delay={index % 2 === 0 ? index / 2 : (index + 1) / 2} onClick={() => navigate(`/${feature.title.toLowerCase()}`)} />
           ))}
@@ -156,12 +183,19 @@ export default function Home() {
         </div>
 
         {/* 数据统计面板 */}
-        <div className="mt-12">
+        <div className="mt-12 homepage-section">
           <h2 className="text-3xl font-bold mb-8 text-center text-[#00F0FF]">{translations.networkStats}</h2>
 
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 chart-container">
             {/* 质押数据卡片 */}
-            <motion.div className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6" whileHover={{ y: -5 }}>
+            <motion.div
+              className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6 data-card"
+              whileHover={{ transform: "translate3d(0, -5px, 0)" }}
+              style={{
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+              }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-gradient-to-br from-[#00F0FF] to-[#00A8FF]">
                   <i className="fa-solid fa-lock text-white text-lg"></i>
@@ -193,7 +227,14 @@ export default function Home() {
             </motion.div>
 
             {/* 论文数据卡片 */}
-            <motion.div className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6" whileHover={{ y: -5 }}>
+            <motion.div
+              className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6 data-card"
+              whileHover={{ transform: "translate3d(0, -5px, 0)" }}
+              style={{
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+              }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-gradient-to-br from-[#00F0FF] to-[#00A8FF]">
                   <i className="fa-solid fa-file-lines text-white text-lg"></i>
@@ -225,7 +266,14 @@ export default function Home() {
             </motion.div>
 
             {/* 代币数据卡片 */}
-            <motion.div className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6" whileHover={{ y: -5 }}>
+            <motion.div
+              className="bg-[#0A0F1F]/50 backdrop-blur-md rounded-xl border border-[#00F0FF]/20 p-6 data-card"
+              whileHover={{ transform: "translate3d(0, -5px, 0)" }}
+              style={{
+                willChange: "transform",
+                backfaceVisibility: "hidden",
+              }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-gradient-to-br from-[#00F0FF] to-[#00A8FF]">
                   <i className="fa-solid fa-coins text-white text-lg"></i>
@@ -259,7 +307,7 @@ export default function Home() {
         </div>
 
         {/* Roadmap Section */}
-        <div className="mt-16">
+        <div className="mt-16 homepage-section">
           <h2 className="text-3xl font-bold mb-8 text-center text-[#00F0FF]">{translations.roadmap}</h2>
 
           <div className="max-w-6xl mx-auto">
@@ -299,7 +347,18 @@ export default function Home() {
                     items: language === "en" ? ["SCAI LAB - An autonomous scientific research Agent"] : ["SCAI LAB一个能够自主进行科研创造的Agent"],
                   },
                 ].map((period, index) => (
-                  <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} viewport={{ once: true }} className="relative">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, transform: "translate3d(0, 20px, 0)" }}
+                    whileInView={{ opacity: 1, transform: "translate3d(0, 0, 0)" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative timeline-item"
+                    style={{
+                      willChange: "transform, opacity",
+                      backfaceVisibility: "hidden",
+                    }}
+                  >
                     {/* Timeline dot */}
                     <div className="absolute -left-11 top-4 w-6 h-6 rounded-full flex items-center justify-center bg-[#00F0FF] ring-4 ring-[#00F0FF]/30">
                       <i className="fa-solid fa-calendar text-[#0F172A] text-xs"></i>
@@ -311,7 +370,15 @@ export default function Home() {
                     {/* Items */}
                     <div className="space-y-3">
                       {period.items.map((item, i) => (
-                        <motion.div key={i} whileHover={{ x: 5 }} className="p-4 rounded-lg bg-[#0F172A]/50 border border-[#00F0FF]/20 backdrop-blur-md">
+                        <motion.div
+                          key={i}
+                          whileHover={{ transform: "translate3d(5px, 0, 0)" }}
+                          className="p-4 rounded-lg bg-[#0F172A]/50 border border-[#00F0FF]/20 backdrop-blur-md transform-gpu"
+                          style={{
+                            willChange: "transform",
+                            backfaceVisibility: "hidden",
+                          }}
+                        >
                           <div className="flex items-center gap-3">
                             <i className="fa-solid fa-check text-[#00F0FF]"></i>
                             <p>{item}</p>

@@ -27,7 +27,73 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Smooth transitions */
-* {
-  transition: all 0.2s ease;
+/* Optimized transitions - only apply to specific elements that need them */
+.transition-optimized {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, opacity;
+}
+
+.transition-optimized:not(:hover):not(:focus):not(:active) {
+  will-change: auto;
+}
+
+/* Specific transition classes for different use cases */
+.transition-colors {
+  transition: color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.transition-transform {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.transition-transform:not(:hover):not(:focus):not(:active) {
+  will-change: auto;
+}
+
+/* Homepage specific optimizations */
+.homepage-hero {
+  contain: layout style paint;
+  transform: translateZ(0);
+  will-change: contents;
+}
+
+.homepage-section {
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+.data-card {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.data-card:hover {
+  transform: translate3d(0, -5px, 0);
+}
+
+.data-card:not(:hover) {
+  will-change: auto;
+}
+
+.timeline-item {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.timeline-item-complete {
+  will-change: auto;
+}
+
+/* Optimized gradient text */
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-rendering: optimizeSpeed;
 }
