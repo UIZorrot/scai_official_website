@@ -1,0 +1,217 @@
+/* Performance Optimizations for Token Page */
+
+/* Hardware Acceleration Classes */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.transform-gpu-auto {
+  transform: translateZ(0);
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Optimized Backdrop Blur */
+.backdrop-blur-optimized {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+}
+
+/* Smooth Animations */
+.animate-smooth {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Chart Container Optimizations */
+.chart-container {
+  contain: layout style paint;
+  transform: translateZ(0);
+  will-change: contents;
+}
+
+.chart-container:hover {
+  will-change: transform;
+}
+
+.chart-container:not(:hover) {
+  will-change: auto;
+}
+
+/* Modal Optimizations */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(0);
+  will-change: opacity, backdrop-filter;
+}
+
+.modal-content {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+/* Button Hover Optimizations */
+.btn-optimized {
+  transform: translateZ(0);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.btn-optimized:hover {
+  transform: translateZ(0) scale(1.02);
+}
+
+.btn-optimized:active {
+  transform: translateZ(0) scale(0.98);
+}
+
+.btn-optimized:not(:hover):not(:active) {
+  will-change: auto;
+}
+
+/* Tab Navigation Optimizations */
+.tab-container {
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+.tab-button {
+  transform: translateZ(0);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, background-color;
+}
+
+.tab-button:not(:hover):not(:active) {
+  will-change: auto;
+}
+
+/* Progress Bar Animations */
+.progress-bar {
+  transform: translateZ(0);
+  will-change: width;
+  transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.progress-bar-complete {
+  will-change: auto;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transform: translateZ(0);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  transform: translateZ(0) translateY(-2px);
+}
+
+.card-hover:not(:hover) {
+  will-change: auto;
+}
+
+/* Stagger Animation Container */
+.stagger-container {
+  contain: layout style;
+}
+
+.stagger-item {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.stagger-item-complete {
+  will-change: auto;
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .transform-gpu,
+  .btn-optimized,
+  .card-hover,
+  .tab-button,
+  .progress-bar {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  .backdrop-blur-optimized,
+  .modal-backdrop {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .backdrop-blur-optimized,
+  .modal-backdrop {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* Performance Monitoring Classes */
+.perf-monitor {
+  contain: strict;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Scroll Performance */
+.scroll-optimized {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Text Rendering Optimization */
+.text-optimized {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Image/Chart Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, 
+    rgba(0, 240, 255, 0.1) 25%, 
+    rgba(0, 240, 255, 0.2) 50%, 
+    rgba(0, 240, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 2s infinite;
+  transform: translateZ(0);
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Critical CSS for Above-the-fold Content */
+.critical-content {
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+/* Non-critical Content */
+.non-critical {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 200px;
+}

@@ -58,7 +58,47 @@ export const resources = {
       stakingRewards: "Staking Rewards",
       yourStake: "Your Stake",
       totalStaked: "Total Staked",
-      apy: "APY"
+      apy: "APY",
+      // Staking section
+      stakeTokens: "Stake Tokens",
+      amountToStake: "Amount to stake",
+      enterAmount: "Enter amount",
+      stakeButton: "Stake Tokens",
+      stakingDashboard: "Staking Dashboard",
+      currentEpoch: "Current Epoch",
+      stakingHistory: "Staking History",
+      epochRewards: "Epoch Rewards",
+      totalRewards: "Total Rewards",
+      // Tokenomics section
+      tokenMetrics: "Token Metrics",
+      circulatingSupply: "Circulating Supply",
+      totalSupply: "Total Supply",
+      tokenBurnHistory: "Token Burn History",
+      foundationTreasury: "Foundation Treasury",
+      // DAO Proposals
+      daoProposals: "DAO Proposals",
+      proposalStatus: "Status",
+      endDate: "End Date",
+      totalVotes: "Total Votes",
+      votingResults: "Voting Results",
+      voteFor: "Vote For",
+      voteAgainst: "Vote Against",
+      proposalEnds: "Ends",
+      votes: "votes",
+      // Status labels
+      active: "Active",
+      passed: "Passed",
+      rejected: "Rejected",
+      // Categories
+      researchIncentives: "Research Incentives",
+      communityRewards: "Community Rewards",
+      teamAdvisors: "Team & Advisors",
+      ecosystemFund: "Ecosystem Fund",
+      liquidity: "Liquidity",
+      // Error messages
+      enterStakeAmount: "Please enter stake amount",
+      stakeSuccess: "Staked {amount} tokens successfully",
+      walletConnected: "Wallet connected successfully"
     },
     // 其他页面的英文翻译...
   },
@@ -118,7 +158,47 @@ export const resources = {
       stakingRewards: "质押奖励",
       yourStake: "您的质押",
       totalStaked: "总质押量",
-      apy: "年化收益率"
+      apy: "年化收益率",
+      // Staking section
+      stakeTokens: "质押代币",
+      amountToStake: "质押数量",
+      enterAmount: "输入数量",
+      stakeButton: "质押代币",
+      stakingDashboard: "质押仪表板",
+      currentEpoch: "当前周期",
+      stakingHistory: "质押历史",
+      epochRewards: "周期奖励",
+      totalRewards: "总奖励",
+      // Tokenomics section
+      tokenMetrics: "代币指标",
+      circulatingSupply: "流通供应量",
+      totalSupply: "总供应量",
+      tokenBurnHistory: "代币燃烧历史",
+      foundationTreasury: "基金会金库",
+      // DAO Proposals
+      daoProposals: "DAO提案",
+      proposalStatus: "状态",
+      endDate: "结束日期",
+      totalVotes: "总票数",
+      votingResults: "投票结果",
+      voteFor: "支持",
+      voteAgainst: "反对",
+      proposalEnds: "结束时间",
+      votes: "票",
+      // Status labels
+      active: "进行中",
+      passed: "已通过",
+      rejected: "已拒绝",
+      // Categories
+      researchIncentives: "研究激励",
+      communityRewards: "社区奖励",
+      teamAdvisors: "团队和顾问",
+      ecosystemFund: "生态基金",
+      liquidity: "流动性",
+      // Error messages
+      enterStakeAmount: "请输入质押数量",
+      stakeSuccess: "成功质押 {amount} 个代币",
+      walletConnected: "钱包连接成功"
     },
     // 其他页面的中文翻译...
   }

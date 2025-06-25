@@ -151,14 +151,19 @@ export default function App() {
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, logout }}>
       <LanguageContext.Provider value={languageContextValue}>
-        <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0F172A]/80 border-b border-[#00F0FF]/20">
+        <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-optimized bg-gradient-to-r from-[#0A0F1C]/95 via-[#0F172A]/95 to-[#0A0F1C]/95 border-b border-[#00F0FF]/30 shadow-lg shadow-[#00F0FF]/5 transform-gpu">
           <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="text-2xl font-bold cursor-pointer" onClick={() => navigate("/")}>
-              <span className="text-[#00F0FF]">SCAI</span>
-            </div>
-            <div className="flex gap-4 ml-auto">
+            <motion.div className="text-2xl font-bold cursor-pointer transform-gpu" onClick={() => navigate("/")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+              <span className="text-transparent bg-gradient-to-r from-[#00F0FF] via-[#00D4FF] to-[#00F0FF] bg-clip-text font-extrabold tracking-wide">SCAI</span>
+            </motion.div>
+            <div className="flex gap-4 ml-auto items-center">
               <LanguageSwitcher />
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="px-6 py-2 rounded-full bg-gradient-to-r from-[#00F0FF] to-[#00F0FF]/70 text-white font-medium flex items-center gap-2">
+              <motion.button
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 240, 255, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00F0FF] via-[#00D4FF] to-[#00F0FF] text-[#0F172A] font-semibold flex items-center gap-2 shadow-lg shadow-[#00F0FF]/20 hover:shadow-[#00F0FF]/40 transition-all duration-300 transform-gpu border border-[#00F0FF]/20"
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
                 <i className="fa-solid fa-wallet"></i>
                 <span>Connect Wallet</span>
               </motion.button>
