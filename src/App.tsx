@@ -7,7 +7,7 @@ import Token from "@/pages/Token";
 import Web3 from "@/pages/Web3";
 import Community from "@/pages/Community";
 import About from "@/pages/About";
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { LanguageDropdown } from "@/components/LanguageSwitcher";
 import { PageErrorBoundary } from "@/components/ErrorBoundary";
 import { createContext, useState, useEffect, useCallback, useMemo } from "react";
 import { shouldKeepEnglish } from "@/lib/utils";
@@ -41,8 +41,8 @@ const getInitialLanguage = (): Language => {
 
 export const AuthContext = createContext({
   isAuthenticated: false,
-  setIsAuthenticated: (_value: boolean) => {},
-  logout: () => {},
+  setIsAuthenticated: (_value: boolean) => { },
+  logout: () => { },
 });
 
 interface LanguageContextType {
@@ -55,8 +55,8 @@ interface LanguageContextType {
 
 export const LanguageContext = createContext<LanguageContextType>({
   language: "en",
-  toggleLanguage: () => {},
-  setLanguage: () => {},
+  toggleLanguage: () => { },
+  setLanguage: () => { },
   isEnglishWord: (_word: string) => false,
   t: (key: string) => key,
 });
@@ -151,25 +151,90 @@ export default function App() {
   return (
     <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated, logout }}>
       <LanguageContext.Provider value={languageContextValue}>
-        <div className="sticky top-0 left-0 right-0 z-50 backdrop-blur-optimized bg-gradient-to-r from-[#0A0F1C]/95 via-[#0F172A]/95 to-[#0A0F1C]/95 border-b border-[#00F0FF]/30 shadow-lg shadow-[#00F0FF]/5 transform-gpu">
-          <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-            <motion.div className="text-2xl font-bold cursor-pointer transform-gpu" onClick={() => navigate("/")} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
-              <span className="text-transparent bg-gradient-to-r from-[#00F0FF] via-[#00D4FF] to-[#00F0FF] bg-clip-text font-extrabold tracking-wide">SCAI</span>
-            </motion.div>
-            <div className="flex gap-4 ml-auto items-center">
-              <LanguageSwitcher />
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 240, 255, 0.3)" }}
+        {/* Enhanced Scientific Header */}
+        <motion.header
+          className="sticky top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/95 border-b border-gray-200 shadow-lg transform-gpu"
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex justify-between items-center">
+              {/* Logo and Brand */}
+              <motion.div
+                className="flex items-center gap-4 cursor-pointer transform-gpu"
+                onClick={() => navigate("/")}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00F0FF] via-[#00D4FF] to-[#00F0FF] text-[#0F172A] font-semibold flex items-center gap-2 shadow-lg shadow-[#00F0FF]/20 hover:shadow-[#00F0FF]/40 transition-all duration-300 transform-gpu border border-[#00F0FF]/20"
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
-                <i className="fa-solid fa-wallet"></i>
-                <span>Connect Wallet</span>
-              </motion.button>
+                <motion.div
+                  className="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img src="/logo.png" alt="SCAI Logo" className="w-8 h-8 object-contain rounded-full" />
+                </motion.div>
+                <div>
+                  <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text font-extrabold tracking-wide">
+                    SCAI
+                  </div>
+                  <div className="text-xs text-gray-600 font-medium tracking-wider">
+                    Scientific AI Infrastructure
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Navigation Menu */}
+              <nav className="hidden md:flex items-center gap-8">
+                {[
+                  { name: "SCAICH", path: "/scaich", icon: "fa-solid fa-brain" },
+                  { name: "SCIBOX", path: "/scibox", icon: "fa-solid fa-database" },
+                  { name: "Foundation", path: "/foundation", icon: "fa-solid fa-university" },
+                  { name: "Community", path: "/community", icon: "fa-solid fa-users" },
+                ].map((item) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.path}
+                    className="group flex items-center gap-2 px-4 py-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-all duration-300"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <i className={`${item.icon} text-sm group-hover:text-[#4F46E5] transition-colors`}></i>
+                    <span className="font-medium">{item.name}</span>
+                  </motion.a>
+                ))}
+              </nav>
+
+              {/* Right Side Actions */}
+              <div className="flex gap-4 items-center">
+                <LanguageDropdown />
+
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 0 30px rgba(79, 70, 229, 0.4)"
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu border border-gray-200"
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
+                  <i className="fa-solid fa-wallet"></i>
+                  <span>Connect Wallet</span>
+                </motion.button>
+
+                {/* Mobile Menu Button */}
+                <motion.button
+                  className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <i className="fa-solid fa-bars text-lg"></i>
+                </motion.button>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.header>
         <Routes>
           <Route
             path="/"

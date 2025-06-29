@@ -60,39 +60,65 @@ export function LanguageDropdown() {
   return (
     <div className="relative group">
       <motion.button
-        whileHover={{ scale: 1.02 }}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0F172A] border border-[#00F0FF]/30 text-[#00F0FF] hover:border-[#00F0FF]/60 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="flex items-center gap-3 px-4 py-2 rounded-xl bg-gray-100 border border-gray-300 hover:border-gray-400 text-gray-900 hover:bg-gray-200 transition-all duration-300"
       >
-        <span>{languages.find(lang => lang.code === language)?.flag}</span>
-        <span className="text-sm">{getLanguageDisplayName()}</span>
-        <svg className="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span className="text-lg">{languages.find(lang => lang.code === language)?.flag}</span>
+        <span className="text-sm font-medium">{getLanguageDisplayName()}</span>
+        <motion.svg
+          className="w-4 h-4 transition-transform group-hover:rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          initial={{ rotate: 0 }}
+          whileHover={{ rotate: 180 }}
+          transition={{ duration: 0.3 }}
+        >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        </motion.svg>
       </motion.button>
 
-      {/* 下拉菜单 */}
-      <div className="absolute top-full left-0 mt-1 w-full bg-[#0F172A] border border-[#00F0FF]/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-        {languages.map((lang) => (
+      {/* Enhanced Dropdown Menu */}
+      <motion.div
+        className="absolute top-full right-0 mt-2 w-40 bg-white border border-gray-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+        initial={{ opacity: 0, y: -10 }}
+        whileHover={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {languages.map((lang, index) => (
           <motion.button
             key={lang.code}
-            whileHover={{ backgroundColor: 'rgba(0, 240, 255, 0.1)' }}
-            className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors ${
-              language === lang.code 
-                ? 'text-[#00F0FF] bg-[#00F0FF]/10' 
-                : 'text-gray-300 hover:text-[#00F0FF]'
-            }`}
+            whileHover={{
+              backgroundColor: 'rgba(79, 70, 229, 0.1)',
+              x: 5
+            }}
+            whileTap={{ scale: 0.95 }}
+            className={`w-full flex items-center gap-3 px-4 py-3 text-sm text-left transition-all duration-200 ${index === 0 ? 'rounded-t-xl' : ''
+              } ${index === languages.length - 1 ? 'rounded-b-xl' : ''
+              } ${language === lang.code
+                ? 'text-[#4F46E5] bg-[#4F46E5]/10 border-l-2 border-[#4F46E5]'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+              }`}
             onClick={() => setLanguage(lang.code)}
           >
-            <span>{lang.flag}</span>
-            <span>{lang.name}</span>
+            <span className="text-lg">{lang.flag}</span>
+            <span className="font-medium">{lang.name}</span>
             {language === lang.code && (
-              <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+              <motion.svg
+                className="w-4 h-4 ml-auto text-[#4F46E5]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
+              </motion.svg>
             )}
           </motion.button>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

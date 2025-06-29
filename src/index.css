@@ -13,11 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
 /* Custom animations */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -30,7 +38,7 @@
 /* Optimized transitions - only apply to specific elements that need them */
 .transition-optimized {
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
 }
 
@@ -41,8 +49,8 @@
 /* Specific transition classes for different use cases */
 .transition-colors {
   transition: color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .transition-transform {
