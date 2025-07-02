@@ -1,10 +1,34 @@
-# Nuxt Minimal Starter
+# SCAI Official Website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+这是 SCAI (Specialized Cognitive AI) 的官方网站，采用现代化的 Web 技术栈构建，为用户提供关于 SCAI 项目的全面信息。
 
-## Setup
+## 🚀 项目特色
 
-Make sure to install dependencies:
+- **多语言支持**: 支持中英文切换，提供国际化用户体验
+- **主题切换**: 内置深色/浅色主题切换功能
+- **响应式设计**: 适配各种设备屏幕尺寸
+- **现代化UI**: 使用 UnoCSS 实现精美的界面设计
+- **组件化架构**: 模块化的 Vue 组件，便于维护和扩展
+
+## 📋 主要页面内容
+
+- **首页 (Hero Section)**: 项目介绍和核心价值展示
+- **产品展示**: SCAI 相关产品和服务介绍
+- **网络分析**: 技术架构和网络分析功能
+- **智能代理**: AI 代理功能展示
+- **质押功能**: 代币质押相关信息
+- **路线图**: 项目发展计划和里程碑
+- **团队介绍**: 核心团队成员信息
+
+## 🛠️ 技术栈
+
+- **框架**: [Nuxt.js 3](https://nuxt.com/) - Vue.js 全栈框架
+- **样式**: [UnoCSS](https://unocss.dev/) - 原子化 CSS 引擎
+- **国际化**: Vue I18n - 多语言支持
+- **TypeScript**: 类型安全的 JavaScript
+- **组件**: Vue 3 Composition API
+
+## 📦 安装依赖
 
 ```bash
 # npm
@@ -20,9 +44,9 @@ yarn install
 bun install
 ```
 
-## Development Server
+## 🔧 开发服务器
 
-Start the development server on `http://localhost:3000`:
+启动开发服务器 `http://localhost:3000`:
 
 ```bash
 # npm
@@ -38,9 +62,9 @@ yarn dev
 bun run dev
 ```
 
-## Production
+## 🏗️ 生产构建
 
-Build the application for production:
+构建生产版本:
 
 ```bash
 # npm
@@ -56,7 +80,9 @@ yarn build
 bun run build
 ```
 
-Locally preview production build:
+## 👀 预览生产版本
+
+本地预览生产构建:
 
 ```bash
 # npm
@@ -72,4 +98,34 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 📁 项目结构
+
+```
+scai_official_website/
+├── components/           # Vue 组件
+│   ├── sections/        # 页面区块组件
+│   ├── AppHeader.vue    # 头部组件
+│   ├── AppFooter.vue    # 底部组件
+│   ├── ThemeToggle.vue  # 主题切换
+│   └── LanguageToggle.vue # 语言切换
+├── i18n/                # 国际化配置
+│   └── locales/         # 语言文件
+├── assets/              # 静态资源
+│   ├── css/            # 样式文件
+│   └── images/         # 图片资源
+├── pages/               # 页面路由
+├── composables/         # 组合式函数
+└── layouts/             # 布局模板
+```
+
+## 🌐 部署
+
+查看 [Nuxt 部署文档](https://nuxt.com/docs/getting-started/deployment) 了解更多部署信息。
+
+## 🤝 贡献
+
+欢迎提交 Issues 和 Pull Requests 来改进项目。
+
+## 📄 许可证
+
+本项目采用相应的开源许可证，详情请查看项目许可证文件。
