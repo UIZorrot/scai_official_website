@@ -1,31 +1,75 @@
-# 科链社区
+# Nuxt Minimal Starter
 
-项目编号: 7519523220199326015
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-本项目是由 [网站开发专家](https://space.coze.cn/) 创建.
+## Setup
 
-[**项目地址**](https://space.coze.cn/task/7519523220199326015)
+Make sure to install dependencies:
 
-## 本地开发
+```bash
+# npm
+npm install
 
-### 环境准备
-
-- 安装 [Node.js](https://nodejs.org/en)
-- 安装 [pnpm](https://pnpm.io/installation)
-
-### 操作步骤
-
-- 安装依赖
-
-```sh
+# pnpm
 pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-- 启动 Dev Server
+## Development Server
 
-```sh
-pnpm run dev
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-- 在浏览器访问 http://localhost:3000
+## Production
 
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

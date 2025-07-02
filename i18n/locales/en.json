@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "scaich": "SCAICH",
+    "scibox": "SCIBOX",
+    "foundation": "FOUNDATION",
+    "community": "COMMUNITY",
+    "connectWallet": "CONNECT WALLET",
+    "more": "More",
+    "settings": "Settings",
+    "documentation": "Documentation",
+    "api": "API",
+    "blog": "Blog",
+    "github": "GitHub",
+    "support": "Support"
+  },
+  "hero": {
+    "title": "WEB3 BRAIN FOR SCIENCE",
+    "subtitle": "Scientific AI Collaboration Infrastructure",
+    "description": "Building the future of scientific research through decentralized AI networks, censorship-resistant storage, and blockchain-powered collaboration",
+    "exploreEcosystem": "EXPLORE ECOSYSTEM",
+    "readWhitepaper": "READ WHITEPAPER"
+  },
+  "stats": {
+    "papers": "Research Papers",
+    "institutions": "Institutions",
+    "partners": "Partners",
+    "uptime": "Uptime"
+  },
+  "sections": {
+    "multipleAgents": "Multiple agents in SCAI collaborate to ensure reliable, evidence-based answers through literature search and analysis."
+  },
+  "staking": {
+    "title": "STAKING & REWARDS",
+    "description": "The SCAI Foundation will launch token staking at the appropriate time. Staking your SCAI tokens will earn you dedicated reward pool.",
+    "joinDescription": "Join our community to stay updated on the staking launch and be among the first to participate in the SCAI ecosystem rewards program.",
+    "foundationFund": "Foundation Fund",
+    "foundationFundDesc": "Dedicated reward pool",
+    "governance": "Governance",
+    "governanceDesc": "Participate in decisions",
+    "rewards": "Rewards",
+    "rewardsDesc": "Earn SCAI tokens",
+    "visitFoundation": "VISIT FOUNDATION"
+  },
+  "products": {
+    "title": "OUR PRODUCTS",
+    "subtitle": "Two powerful platforms revolutionizing scientific research and collaboration",
+    "scaiSearch": {
+      "title": "SCAI SEARCH",
+      "subtitle": "AI-Powered Scientific Search Engine",
+      "description": "Revolutionary AI search engine specifically designed for scientific research. Our advanced algorithms understand scientific content and terminology to deliver precise, relevant results for researchers worldwide.",
+      "visitPlatform": "VISIT PLATFORM"
+    },
+    "sciBoxStore": {
+      "title": "SCI BOX STORE",
+      "subtitle": "Decentralized Scientific Data Storage",
+      "description": "The world's first decentralized storage platform built specifically for scientific data and research papers. Ensuring permanent, censorship-resistant access to scientific knowledge for future generations.",
+      "visitPlatform": "VISIT PLATFORM"
+    }
+  },
+  "analytics": {
+    "title": "NETWORK ANALYTICS",
+    "subtitle": "Real-time insights into our decentralized research ecosystem",
+    "networkActivity": {
+      "title": "Network Activity",
+      "governance": "Governance",
+      "totalStaked": "Total Staked",
+      "epoch": "Epoch"
+    },
+    "researchPapers": {
+      "title": "Research Papers",
+      "totalPapers": "Total Papers",
+      "thisMonth": "This Month",
+      "decentralizedPercent": "DecentralizeA",
+      "blockchainPercent": "Blockchain",
+      "privacyPercent": "Privacy"
+    },
+    "tokenEconomics": {
+      "title": "Token Economics",
+      "totalBurned": "Total Burned",
+      "foundation": "Foundation",
+      "epoch": "Epoch"
+    }
+  },
+  "team": {
+    "title": "OUR TEAM",
+    "subtitle": "Leading researchers and engineers building the future of decentralized science",
+    "memberRole": "AI Research & Blockchain Chief Scientist",
+    "memberDescription": "Former MIT researcher with 10+ years in AI and distributed systems"
+  },
+  "roadmap": {
+    "title": "PROJECT ROADMAP",
+    "2025Q3": {
+      "title": "2025 Q3",
+      "subtitle": "Foundation & Community",
+      "tasks": {
+        "communityMigration": "Complete community migration and initial token distribution",
+        "partnership": "Establish a strategic research partnership relationship",
+        "hackathon": "Launch the SCAI Developer Hackathon",
+        "nftCollection": "Release the SCA Research NFT Collection"
+      }
+    },
+    "2025Q4": {
+      "title": "2025 Q4",
+      "subtitle": "Platform Development"
+    },
+    "2026Q1": {
+      "title": "2026 Q1",
+      "subtitle": "Advanced Features"
+    },
+    "2026Q2": {
+      "title": "2026 Q2",
+      "subtitle": "Ecosystem Expansion"
+    },
+    "2026Q3": {
+      "title": "2026 Q3",
+      "subtitle": "DeFi Integration"
+    },
+    "2026Q4": {
+      "title": "2026 Q4",
+      "subtitle": "AI Integration"
+    },
+    "status": {
+      "completed": "COMPLETED",
+      "upcoming": "UPCOMING"
+    }
+  },
+  "footer": {
+    "tagline": "WEB3 BRAIN FOR SCIENCE"
+  },
+  "common": {
+    "language": "Language",
+    "switchLanguage": "Switch Language"
+  },
+  "settings": {
+    "theme": "Theme",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "systemMode": "System Mode",
+    "language": "Language"
+  }
+}
