@@ -76,14 +76,22 @@
         <!-- CTA 按钮组 -->
         <div class="flex flex-col gap-4 justify-center items-center sm:flex-row sm:gap-6">
           <button
-                  class="btn btn-hero-primary">
+                  class="btn btn-hero-primary"
+                  @click="handClick('https://foundation.scai.sh/')">
             {{ $t('hero.exploreEcosystem') }}
             <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
 
-          <button
+          <!-- <button
                   class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]">
             {{ $t('hero.readWhitepaper') }}
+          </button> -->
+
+          <button
+                  class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]"
+                  @click="handClick('https://search.scai.sh/')">
+            {{ $t('hero.OpenApp') }}
+
           </button>
         </div>
 
@@ -92,7 +100,7 @@
           <div
                v-for="stat in stats"
                :key="stat.label"
-               class="p-3 text-center rounded-lg border backdrop-blur-sm bg-white/20 border-white/30 sm:p-4">
+               class="p-3 text-center rounded-lg border border-solid border-white backdrop-blur-sm bg-white/20  sm:p-4">
             <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {{ stat.value }}
             </div>
@@ -124,6 +132,12 @@ const stats = computed(() => [
   { value: '50+', label: t('stats.partners') },
   { value: '99.9%', label: t('stats.uptime') }
 ])
+
+const handClick = (url: string) => {
+  window.open(url, '_blank')
+}
+
+
 </script>
 
 <style scoped>

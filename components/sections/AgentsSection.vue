@@ -1,10 +1,10 @@
 <template>
   <section class="py-16 bg-white dark:bg-black">
-    <div class="container mx-auto">
-      <div class="flex justify-between items-center">
+    <div class="w-full px-10">
+      <div class=" flex justify-between items-center">
         <!-- 左边重复图片 -->
         <div class="flex items-center space-x-4">
-          <div class="logo" v-for="i in 1" :key="i"></div>
+          <div class="logo"></div>
         </div>
 
         <!-- 中间文字 -->
@@ -16,7 +16,7 @@
 
         <!-- 右边重复图片 -->
         <div class="flex items-center space-x-4">
-          <div class="logo" v-for="i in 1" :key="i"></div>
+          <div class="logo"></div>
         </div>
       </div>
     </div>
@@ -38,12 +38,10 @@ const { t } = useI18n()
 </script>
 <style scoped>
 .logo {
-  width: 50px;
+  width: 26dvw;
   height: 50px;
-  border-radius: 50%;
-  background-image: url('~/assets/images/logo.png');
+  background-image: url('~/assets/images/radis_logo.png');
+  background-repeat: space;
   background-size: 50px 50px;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 </style>

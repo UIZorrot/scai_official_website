@@ -91,10 +91,10 @@ const { t } = useI18n()
 
 // 导航菜单项
 const navigation = computed(() => [
-  { name: t('nav.scaich'), href: '#scaich' },
-  { name: t('nav.scibox'), href: '#scibox' },
-  { name: t('nav.foundation'), href: '#foundation' },
-  { name: t('nav.community'), href: '#community' },
+  { name: t('nav.scaich'), href: 'https://search.scai.sh/' },
+  { name: t('nav.scibox'), href: 'https://scibox.store/' },
+  { name: t('nav.foundation'), href: 'https://foundation.scai.sh/' },
+  { name: t('nav.community'), href: 'https://discord.gg/2kM8dRd5' },
 ])
 
 // 响应式状态
