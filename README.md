@@ -2,32 +2,6 @@
 
 这是 SCAI (Specialized Cognitive AI) 的官方网站，采用现代化的 Web 技术栈构建，为用户提供关于 SCAI 项目的全面信息。
 
-## 🚀 项目特色
-
-- **多语言支持**: 支持中英文切换，提供国际化用户体验
-- **主题切换**: 内置深色/浅色主题切换功能
-- **响应式设计**: 适配各种设备屏幕尺寸
-- **现代化UI**: 使用 UnoCSS 实现精美的界面设计
-- **组件化架构**: 模块化的 Vue 组件，便于维护和扩展
-
-## 📋 主要页面内容
-
-- **首页 (Hero Section)**: 项目介绍和核心价值展示
-- **产品展示**: SCAI 相关产品和服务介绍
-- **网络分析**: 技术架构和网络分析功能
-- **智能代理**: AI 代理功能展示
-- **质押功能**: 代币质押相关信息
-- **路线图**: 项目发展计划和里程碑
-- **团队介绍**: 核心团队成员信息
-
-## 🛠️ 技术栈
-
-- **框架**: [Nuxt.js 3](https://nuxt.com/) - Vue.js 全栈框架
-- **样式**: [UnoCSS](https://unocss.dev/) - 原子化 CSS 引擎
-- **国际化**: Vue I18n - 多语言支持
-- **TypeScript**: 类型安全的 JavaScript
-- **组件**: Vue 3 Composition API
-
 ## 📦 安装依赖
 
 ```bash
@@ -70,14 +44,8 @@ bun run dev
 # npm
 npm run build
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# pm2
+pm2 start ecosystem.config.js --env production
 ```
 
 ## 👀 预览生产版本
