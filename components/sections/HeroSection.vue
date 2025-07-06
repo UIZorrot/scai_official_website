@@ -127,9 +127,9 @@ const { t } = useI18n()
 
 // 统计数据
 const stats = computed(() => [
-  { value: '10K+', label: t('stats.papers') },
-  { value: '500+', label: t('stats.institutions') },
-  { value: '50+', label: t('stats.partners') },
+  { value: '413,080', label: t('stats.papers') },
+  { value: '17k+', label: t('stats.institutions') },
+  { value: '7k+', label: t('stats.partners') },
   { value: '99.9%', label: t('stats.uptime') }
 ])
 

@@ -23,8 +23,8 @@
   },
   "stats": {
     "papers": "研究论文",
-    "institutions": "科研机构",
-    "partners": "合作伙伴",
+    "institutions": "当前用户",
+    "partners": "社区成员",
     "uptime": "系统可用性"
   },
   "sections": {

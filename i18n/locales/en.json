@@ -23,8 +23,8 @@
   },
   "stats": {
     "papers": "Research Papers",
-    "institutions": "Institutions",
-    "partners": "Partners",
+    "institutions": "Active Users",
+    "partners": "Members",
     "uptime": "Uptime"
   },
   "sections": {
