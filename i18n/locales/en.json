@@ -1,9 +1,9 @@
 {
   "nav": {
-    "scaich": "SCAICH",
-    "scibox": "SCIBOX",
+    "scaich": "Search",
+    "scibox": "Box",
     "foundation": "FOUNDATION",
-    "community": "COMMUNITY",
+    "community": "Press",
     "connectWallet": "CONNECT WALLET",
     "more": "More",
     "settings": "Settings",
@@ -31,7 +31,7 @@
     "multipleAgents": "Multiple agents in SCAI collaborate to ensure reliable, evidence-based answers through literature search and analysis."
   },
   "staking": {
-    "title": "STAKING & REWARDS",
+    "title": "SCAI Foundation",
     "description": "The SCAI Foundation will launch token staking at the appropriate time. Staking your SCAI tokens will earn you dedicated reward pool.",
     "joinDescription": "Join our community to stay updated on the staking launch and be among the first to participate in the SCAI ecosystem rewards program.",
     "foundationFund": "Foundation Fund",

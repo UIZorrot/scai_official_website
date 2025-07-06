@@ -16,7 +16,7 @@
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/i18n": "^9.5.6",
     "@vueuse/nuxt": "^13.4.0",
-    "nuxt": "^3.17.5",
+    "nuxt": "^3.17.6",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
@@ -25,5 +25,6 @@
     "@iconify-json/lucide": "^1.2.54",
     "@unocss/nuxt": "^66.3.2",
     "unocss": "^66.3.2"
-  }
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
