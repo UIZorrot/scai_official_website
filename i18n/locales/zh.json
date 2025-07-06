@@ -14,7 +14,7 @@
     "support": "支持"
   },
   "hero": {
-    "title": "WEB3 BRAIN FOR SCIENCE",
+    "title": "WEB3 BRAIN FOR ACADEMIC",
     "subtitle": "科学AI协作基础设施",
     "description": "通过去中心化AI网络、抗审查存储和区块链驱动的协作，构建科学研究的未来",
     "exploreEcosystem": "探索生态系统",
@@ -150,7 +150,7 @@
     }
   },
   "footer": {
-    "tagline": "WEB3 BRAIN FOR SCIENCE"
+    "tagline": "WEB3 BRAIN FOR ACADEMIC"
   },
   "common": {
     "language": "语言",
