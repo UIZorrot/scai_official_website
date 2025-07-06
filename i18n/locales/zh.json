@@ -83,10 +83,31 @@
     }
   },
   "team": {
-    "title": "我们的团队",
-    "subtitle": "领先的研究人员和工程师正在构建去中心化科学的未来",
-    "memberRole": "AI研究与区块链首席科学家",
-    "memberDescription": "前MIT研究员，在AI和分布式系统领域拥有10+年经验"
+    "title": "团队",
+    "subtitle": "SCAI的团队核心人员相互之间平等，采用完全去中心化的方式进行自治式管理",
+    "member": [
+      {
+        "name": "Zorrot Chen",
+        "role": "技术",
+        "description": "北航计算机博士，专注区块链共识，智能合约安全以及AI与区块链技术的结合",
+        "xlink": "https://x.com/ZorrotChen/",
+        "github": "https://github.com/UIZorrot/"
+      },
+      {
+        "name": "Keien Wang",
+        "role": "技术",
+        "description": "山东大学，从事区块链底层开发，另专注 EVM 和 Solana 智能合约开发。",
+        "xlink": "https://x.com/Happyporter4",
+        "github": "https://github.com/keienWang"
+      },
+      {
+        "name": "DrLin1896",
+        "role": "推广",
+        "description": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。",
+        "xlink": "https://x.com/destinylin1113?t=-Bz1tL0IGvStxpfH3YoC9w&s=09",
+        "github": "https://www.threads.net/@drlin1895"
+      }
+    ]
   },
   "roadmap": {
     "title": "项目路线图",

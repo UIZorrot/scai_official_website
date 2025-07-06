@@ -4,7 +4,7 @@
     <HeroSection />
 
     <!-- Agents 协作区域 -->
-    <AgentsSection />
+    <!-- <AgentsSection /> -->
 
     <!-- Staking & Rewards 区域 -->
     <StakingSection />
@@ -13,7 +13,7 @@
     <ProductGallery />
 
     <!-- 网络分析区域 -->
-    <NetworkAnalytics />
+    <!-- <NetworkAnalytics /> -->
 
     <!-- 团队介绍区域 -->
     <TeamSection />

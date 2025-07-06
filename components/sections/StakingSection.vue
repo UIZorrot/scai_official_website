@@ -6,7 +6,7 @@
         <!-- 标题区域 -->
         <div class="mb-12 text-center">
           <h2 class="flex justify-center items-center mb-6 text-4xl font-bold text-heading">
-            💰 {{ $t('staking.title') }}
+            {{ $t('staking.title') }}
           </h2>
 
           <!-- 说明文字区域 -->
