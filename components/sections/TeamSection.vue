@@ -103,7 +103,7 @@ const teamMembers = [
   },
   {
     "name": "YY",
-    "role": "推广",
+    "role": "技术",
     "description": "技术爱好者，专注于AI与区块链技术的结合",
     "xlink": "#",
     "github": "https://github.com/xiaojia21190"
