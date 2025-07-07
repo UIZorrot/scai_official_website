@@ -1,6 +1,6 @@
 <template>
   <header
-          class="fixed top-0 right-0 left-0 z-50 bg-transparent border-b border-white/20 dark:border-gray-700 dark:bg-white/25">
+          class="fixed top-0 right-0 left-0 z-50  border-b border-white/20 ">
     <nav class="px-4 mx-auto  sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -132,24 +132,15 @@ const handleNavClick = (event: Event) => {
 
 // 监听滚动，更新活动section
 const updateActiveSection = () => {
-  const sections = ['products', 'solutions', 'about', 'contact']
-  const headerHeight = 80
-
-  for (const sectionId of sections) {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const rect = element.getBoundingClientRect()
-      if (rect.top <= headerHeight && rect.bottom > headerHeight) {
-        activeSection.value = sectionId
-        return
-      }
-    }
-  }
+  console.log(window.scrollY);
 
   // 如果没有section在视口中，检查是否在顶部
-  if (window.scrollY < 100) {
-    activeSection.value = ''
+  if (window.scrollY > 100) {
+    document.querySelector('header')?.classList.add('bg-[#3FB5F7]')
+  } else {
+    document.querySelector('header')?.classList.remove('bg-[#3FB5F7]')
   }
+
 }
 
 // 监听路由变化，关闭移动端菜单
@@ -165,6 +156,8 @@ watch(width, (newWidth) => {
   }
 })
 
+
+
 // 组件挂载时添加滚动监听
 onMounted(() => {
   window.addEventListener('scroll', updateActiveSection)
@@ -179,17 +172,8 @@ onUnmounted(() => {
 
 <style scoped>
 header {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 </style>
