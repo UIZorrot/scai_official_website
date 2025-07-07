@@ -68,9 +68,9 @@
                   enter-to-class="opacity-100 transform scale-100" leave-active-class="transition duration-75 ease-in"
                   leave-from-class="opacity-100 transform scale-100" leave-to-class="opacity-0 transform scale-95">
         <div v-show="mobileMenuOpen" class="md:hidden">
-          <div class="px-2 pt-2 pb-3 space-y-1 border-t bg-white/10 border-white/20 sm:px-3">
+          <div class="px-2 pt-2 pb-3 space-y-1 border-t  border-white/20 sm:px-3">
             <a v-for="item in navigation" :key="item.name" :href="item.href" @click="handleNavClick"
-               class="block px-3 py-2 text-base font-medium text-white rounded-md transition-colors duration-200 hover:bg-red-500 dark:hover:text-white/80 hover:bg-gray-100 dark:hover:bg-white/10 no-underline"
+               class="block px-3 py-2 text-base font-medium text-white rounded-md transition-colors duration-200 hover:bg-red-500 dark:hover:text-white/80 hover:bg-gray-100  no-underline"
                :class="{
                 'text-white font-semibold bg-white/20': activeSection === item.href.slice(1)
               }">
