@@ -86,7 +86,7 @@ const teamMembers = [
   {
     "name": "Zorrot Chen",
     "role": "技术专家",
-    "description": "专注区块链共识，智能合约安全以及AI与区块链技术的结合",
+    "description": "计算机科学博士，专注区块链共识，智能合约安全以及AI与区块链技术的结合",
     "xlink": "https://x.com/ZorrotChen/",
     "github": "https://github.com/UIZorrot/",
     head: 'zc'
@@ -110,7 +110,7 @@ const teamMembers = [
   {
     "name": "YY",
     "role": "技术专家",
-    "description": "技术爱好者，专注于AI与区块链技术的结合",
+    "description": "数字游民，专业全栈工程师， 技术爱好者，专注于AI与区块链技术的结合",
     "xlink": "#",
     "github": "https://github.com/xiaojia21190",
     "head": "yy"
