@@ -1,6 +1,6 @@
 <template>
   <header
-          class="fixed top-0 right-0 left-0 z-50  border-b border-white/20 ">
+          class="fixed top-0 right-0 left-0 z-50">
     <nav class="px-4 mx-auto  sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -136,9 +136,9 @@ const updateActiveSection = () => {
 
   // 如果没有section在视口中，检查是否在顶部
   if (window.scrollY > 100) {
-    document.querySelector('header')?.classList.add('bg-[#3FB5F7]')
+    document.querySelector('header')?.classList.add('header-next')
   } else {
-    document.querySelector('header')?.classList.remove('bg-[#3FB5F7]')
+    document.querySelector('header')?.classList.remove('header-next')
   }
 
 }
@@ -175,5 +175,14 @@ header {
   width: 100%;
   margin: 0 auto;
   z-index: 1000;
+}
+
+.header-next {
+  background-color: #000000;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  margin: 10px auto;
+  transition: all 0.3s ease-in-out;
+  width: 95%;
 }
 </style>
