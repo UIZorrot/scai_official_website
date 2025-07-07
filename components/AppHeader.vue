@@ -1,6 +1,6 @@
 <template>
   <header
-          class="fixed top-0 right-0 left-0 z-50 bg-transparent border-b border-white/20 dark:border-gray-700">
+          class="fixed top-0 right-0 left-0 z-50 bg-transparent border-b border-white/20 dark:border-gray-700 dark:bg-white/25">
     <nav class="px-4 mx-auto  sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
