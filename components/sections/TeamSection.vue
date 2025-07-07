@@ -25,7 +25,7 @@
                 <div class="relative">
                   <img
                        :src="useAssetsImage(`images/head/${member.head}.png`)"
-                       alt="Dr. Alex Chen"
+                       :alt="member.name"
                        class="object-cover w-32 h-32 rounded-full border-4 border-white shadow-lg dark:border-gray-600" />
                   <!-- 在线状态指示器 -->
                   <div
@@ -121,7 +121,7 @@ const teamMembers = [
     "description": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。",
     "xlink": "https://x.com/guobuqiran1821",
     "github": "https://github.com/ckjxxf",
-    "head": "km"
+    "head": "kk"
   },
   {
     "name": "Erica Deng",
@@ -139,6 +139,14 @@ const teamMembers = [
     "github": "https://www.threads.net/\\@drlin1895",
     "head": "dr"
   },
+  {
+    "name": "KingmenHuang",
+    "role": "推广运营",
+    "description": "高分子材料应用专家，区块链早期玩家，致力于区块链应用落地推广",
+    "xlink": "https://x.com/KingmenHuang",
+    "github": "http://github.com/kingmenHuang",
+    "head": "kh"
+  }
 ]
 
 </script>
