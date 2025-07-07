@@ -24,7 +24,7 @@
               <div class="mb-6 md:mb-0 md:mr-8">
                 <div class="relative">
                   <img
-                       src="~/assets/images/logo.png"
+                       :src="useAssetsImage(`images/head/${member.head}.png`)"
                        alt="Dr. Alex Chen"
                        class="object-cover w-32 h-32 rounded-full border-4 border-white shadow-lg dark:border-gray-600" />
                   <!-- 在线状态指示器 -->
@@ -79,55 +79,65 @@
 // 国际化
 const { t } = useI18n()
 
+const { useAssetsImage } = useAssets()
+
+
 const teamMembers = [
   {
     "name": "Zorrot Chen",
     "role": "技术专家",
     "description": "专注区块链共识，智能合约安全以及AI与区块链技术的结合",
     "xlink": "https://x.com/ZorrotChen/",
-    "github": "https://github.com/UIZorrot/"
+    "github": "https://github.com/UIZorrot/",
+    head: 'zc'
   },
   {
     "name": "Keien Wang",
     "role": "技术专家",
     "description": "从事区块链底层开发，另专注 EVM 和 Solana 智能合约开发。",
     "xlink": "https://x.com/Happyporter4",
-    "github": "https://github.com/keienWang"
+    "github": "https://github.com/keienWang",
+    "head": "kw"
   },
   {
     "name": "Heinz",
     "role": "技术专家",
     "description": "去中心化制造爱好者，专注于无服务器应用开发",
     "xlink": "https://x.com/seseleek/",
-    "github": "https://github.com/hextrump/"
+    "github": "https://github.com/hextrump/",
+    "head": "hz"
   },
   {
     "name": "YY",
     "role": "技术专家",
     "description": "技术爱好者，专注于AI与区块链技术的结合",
     "xlink": "#",
-    "github": "https://github.com/xiaojia21190"
+    "github": "https://github.com/xiaojia21190",
+    "head": "yy"
   },
   {
     "name": "果不其然",
     "role": "UI/UX 设计专家",
     "description": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。",
     "xlink": "https://x.com/guobuqiran1821",
-    "github": "https://github.com/ckjxxf"
+    "github": "https://github.com/ckjxxf",
+    "head": "km"
   },
   {
     "name": "Erica Deng",
     "role": "推广运营",
     "description": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。",
     "xlink": "https://x.com/imcacadeng",
-    "github": "https://github.com/YOURERICACA"
+    "github": "https://github.com/YOURERICACA",
+    "head": "ed"
   },
   {
     "name": "DrLin1896",
     "role": "推广运营",
     "description": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。",
     "xlink": "https://x.com/destinylin1113?t=-Bz1tL0IGvStxpfH3YoC9w&s=09",
-    "github": "https://www.threads.net/\\@drlin1895"
+    "github": "https://www.threads.net/\\@drlin1895",
+    "head": "dr"
   },
 ]
 
