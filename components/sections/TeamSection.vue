@@ -117,15 +117,23 @@ const teamMembers = [
   },
   {
     "name": "果不其然",
-    "role": "UI/UX 设计专家",
+    "role": "产品设计",
     "description": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。",
     "xlink": "https://x.com/guobuqiran1821",
     "github": "https://github.com/ckjxxf",
     "head": "kk"
   },
   {
+    "name": "P",
+    "role": "市场运营, 产品设计",
+    "description": "专注区块链应用落地，参与管理稳定币、DEX、DeFi项目0-1。",
+    "xlink": "https://x.com/awakeypunky",
+    "github": "https://github.com/AwakeyPunky",
+    "head": "pp"
+  },
+  {
     "name": "Erica Deng",
-    "role": "推广运营",
+    "role": "市场运营",
     "description": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。",
     "xlink": "https://x.com/imcacadeng",
     "github": "https://github.com/YOURERICACA",
@@ -133,7 +141,7 @@ const teamMembers = [
   },
   {
     "name": "DrLin1896",
-    "role": "推广运营",
+    "role": "市场运营",
     "description": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。",
     "xlink": "https://x.com/destinylin1113?t=-Bz1tL0IGvStxpfH3YoC9w&s=09",
     "github": "https://www.threads.net/\\@drlin1895",
@@ -141,12 +149,13 @@ const teamMembers = [
   },
   {
     "name": "KingmenHuang",
-    "role": "推广运营",
+    "role": "市场运营",
     "description": "高分子材料应用专家，区块链早期玩家，致力于区块链应用落地推广",
     "xlink": "https://x.com/KingmenHuang",
     "github": "http://github.com/kingmenHuang",
     "head": "kh"
-  }
+  },
+
 ]
 
 </script>
