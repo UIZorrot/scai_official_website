@@ -180,7 +180,7 @@ onUnmounted(() => {
 <style scoped>
 header {
   backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;

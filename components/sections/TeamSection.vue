@@ -14,7 +14,7 @@
       <!-- 团队成员展示 -->
       <div class="mx-auto">
         <!-- 主要团队成员 -->
-        <div class="mb-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="mb-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           <div
                v-for="member in teamMembers"
                :key="member.name"
@@ -46,7 +46,7 @@
                 </div>
 
                 <p class="text-base leading-relaxed text-body">
-                  {{ $t('team.memberDescription') }}
+                  {{ member.description }}
                 </p>
 
                 <!-- 社交链接 -->
@@ -82,46 +82,53 @@ const { t } = useI18n()
 const teamMembers = [
   {
     "name": "Zorrot Chen",
-    "role": "技术",
+    "role": "技术专家",
     "description": "专注区块链共识，智能合约安全以及AI与区块链技术的结合",
     "xlink": "https://x.com/ZorrotChen/",
     "github": "https://github.com/UIZorrot/"
   },
   {
     "name": "Keien Wang",
-    "role": "技术",
+    "role": "技术专家",
     "description": "从事区块链底层开发，另专注 EVM 和 Solana 智能合约开发。",
     "xlink": "https://x.com/Happyporter4",
     "github": "https://github.com/keienWang"
   },
   {
     "name": "Heinz",
-    "role": "技术",
+    "role": "技术专家",
     "description": "去中心化制造爱好者，专注于无服务器应用开发",
     "xlink": "https://x.com/seseleek/",
     "github": "https://github.com/hextrump/"
   },
   {
     "name": "YY",
-    "role": "技术",
+    "role": "技术专家",
     "description": "技术爱好者，专注于AI与区块链技术的结合",
     "xlink": "#",
     "github": "https://github.com/xiaojia21190"
   },
   {
+    "name": "果不其然",
+    "role": "UI/UX 设计专家",
+    "description": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。",
+    "xlink": "https://x.com/guobuqiran1821",
+    "github": "https://github.com/ckjxxf"
+  },
+  {
+    "name": "Erica Deng",
+    "role": "推广运营",
+    "description": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。",
+    "xlink": "https://x.com/imcacadeng",
+    "github": "https://github.com/YOURERICACA"
+  },
+  {
     "name": "DrLin1896",
-    "role": "推广",
+    "role": "推广运营",
     "description": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。",
     "xlink": "https://x.com/destinylin1113?t=-Bz1tL0IGvStxpfH3YoC9w&s=09",
     "github": "https://www.threads.net/\\@drlin1895"
   },
-  {
-    "name": "Erica Deng",
-    "role": "推广",
-    "description": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。",
-    "xlink": "https://x.com/imcacadeng",
-    "github": "https://github.com/YOURERICACA"
-  }
 ]
 
 </script>
