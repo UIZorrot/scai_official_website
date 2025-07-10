@@ -177,7 +177,7 @@ const teamMembers = [
       "en": "Unicamp, fluent in English, Portuguese, and Chinese, focusing on WEB3 market expansion and resource linkage.",
       "zh": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。"
     },
-    "xlink": "https://x.com/imcacadeng",
+    "xlink": "https://x.com/ricaca00",
     "github": "https://github.com/YOURERICACA",
     "head": "ed"
   },
