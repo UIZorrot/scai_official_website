@@ -76,7 +76,7 @@
         <!-- CTA 按钮组 -->
         <div class="flex flex-col gap-4 justify-center items-center sm:flex-row sm:gap-6">
           <button
-                  class="btn btn-hero-primary"
+                  class="btn btn-hero-primary cursor-pointer"
                   @click="handClick('https://foundation.scai.sh/')">
             {{ $t('hero.exploreEcosystem') }}
             <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
@@ -88,7 +88,7 @@
           </button> -->
 
           <button
-                  class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]"
+                  class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)] cursor-pointer"
                   @click="handClick('https://search.scai.sh/')">
             {{ $t('hero.OpenApp') }}
 

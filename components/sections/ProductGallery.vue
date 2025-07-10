@@ -20,7 +20,7 @@
             <img
                  src="~/assets/images/1-1.png"
                  alt="SCAI Search Interface"
-                 class="object-cover w-full h-64" />
+                 class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
           </div>
 
           <!-- 产品信息 -->
@@ -38,7 +38,7 @@
 
           <!-- 访问按钮 -->
           <button
-                  class="inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300  hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500"
+                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300  hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
                   @click="handClick('https://search.scai.sh/')">
             {{ $t('products.scaiSearch.visitPlatform') }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
             <img
                  src="~/assets/images/2-1.png"
                  alt="SciBox Interface"
-                 class="object-cover w-full h-64" />
+                 class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
           </div>
 
           <!-- 产品信息 -->
@@ -72,7 +72,7 @@
 
           <!-- 访问按钮 -->
           <button
-                  class="inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 sm:my-6"
+                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
                   @click="handClick('https://scibox.store/')">
             {{ $t('products.sciBoxStore.visitPlatform') }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
