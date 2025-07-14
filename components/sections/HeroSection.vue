@@ -77,8 +77,8 @@
         <div class="flex flex-col gap-4 justify-center items-center sm:flex-row sm:gap-6">
           <button
                   class="btn btn-hero-primary"
-                  @click="handClick('https://foundation.scai.sh/')">
-            {{ $t('hero.exploreEcosystem') }}
+                  @click="handClick('https://app.scai.sh/')">
+            {{ $t('hero.OpenApp') }}
             <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
 
@@ -89,8 +89,8 @@
 
           <button
                   class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]"
-                  @click="handClick('https://search.scai.sh/')">
-            {{ $t('hero.OpenApp') }}
+                  @click="handClick('https://foundation.scai.sh/')">
+            {{ $t('hero.exploreEcosystem') }}
 
           </button>
         </div>
@@ -127,7 +127,7 @@ const { t } = useI18n()
 
 // 统计数据
 const stats = computed(() => [
-  { value: '413,080', label: t('stats.papers') },
+  { value: '102,839', label: t('stats.papers') },
   { value: '17k+', label: t('stats.institutions') },
   { value: '7k+', label: t('stats.partners') },
   { value: '99.9%', label: t('stats.uptime') }
