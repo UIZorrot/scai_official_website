@@ -79,6 +79,9 @@
                   class="btn btn-hero-primary"
                   @click="handClick('https://app.scai.sh/')">
             {{ $t('hero.OpenApp') }}
+                  class="btn btn-hero-primary cursor-pointer"
+                  @click="handClick('https://foundation.scai.sh/')">
+            {{ $t('hero.exploreEcosystem') }}
             <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
           </button>
 

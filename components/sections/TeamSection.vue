@@ -41,12 +41,12 @@
                     {{ member.name }}
                   </h3>
                   <p class="text-lg font-semibold text-brand">
-                    {{ member.role }}
+                    {{ member.role[locale] }}
                   </p>
                 </div>
 
                 <p class="text-base leading-relaxed text-body">
-                  {{ member.description }}
+                  {{ member.description[locale] }}
                 </p>
 
                 <!-- 社交链接 -->
@@ -77,80 +77,134 @@
 
 <script setup lang="ts">
 // 国际化
-const { t } = useI18n()
+const { locale } = useI18n()
 
 const { useAssetsImage } = useAssets()
 
 
 const teamMembers = [
   {
-    "name": "Zorrot Chen",
-    "role": "技术专家",
-    "description": "计算机科学博士，专注区块链共识，智能合约安全以及AI与区块链技术的结合",
+    "name": "Zorrot",
+    "role": {
+      "en": "Technical Expert",
+      "zh": "技术专家"
+    },
+    "description": {
+      "en": "Computer Science PhD, focusing on blockchain consensus, smart contract security, and the integration of AI and blockchain technology.",
+      "zh": "计算机科学博士，专注区块链共识，智能合约安全以及AI与区块链技术的结合"
+    },
     "xlink": "https://x.com/ZorrotChen/",
     "github": "https://github.com/UIZorrot/",
     head: 'zc'
   },
   {
-    "name": "Keien Wang",
-    "role": "技术专家",
-    "description": "从事区块链底层开发，另专注 EVM 和 Solana 智能合约开发。",
+    "name": "Keien",
+    "role": {
+      "en": "Technical Expert",
+      "zh": "技术专家"
+    },
+    "description": {
+      "en": "Blockchain developer, specializing in EVM and Solana smart contract development.",
+      "zh": "从事区块链底层开发，另专注 EVM 和 Solana 智能合约开发。"
+    },
     "xlink": "https://x.com/Happyporter4",
     "github": "https://github.com/keienWang",
     "head": "kw"
   },
   {
     "name": "Heinz",
-    "role": "技术专家",
-    "description": "去中心化制造爱好者，专注于无服务器应用开发",
+    "role": {
+      "en": "Technical Expert",
+      "zh": "技术专家"
+    },
+    "description": {
+      "en": "Decentralized manufacturing enthusiast, focusing on serverless application development.",
+      "zh": "去中心化制造爱好者，专注于无服务器应用开发"
+    },
     "xlink": "https://x.com/seseleek/",
     "github": "https://github.com/hextrump/",
     "head": "hz"
   },
   {
     "name": "YY",
-    "role": "技术专家",
-    "description": "数字游民，专业全栈工程师， 技术爱好者，专注于AI与区块链技术的结合",
+    "role": {
+      "en": "Technical Expert",
+      "zh": "技术专家"
+    },
+    "description": {
+      "en": "Digital nomad, professional full-stack engineer, technology enthusiast, focusing on the integration of AI and blockchain technology.",
+      "zh": "数字游民，专业全栈工程师， 技术爱好者，专注于AI与区块链技术的结合"
+    },
     "xlink": "#",
     "github": "https://github.com/xiaojia21190",
     "head": "yy"
   },
   {
     "name": "果不其然",
-    "role": "产品设计",
-    "description": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。",
+    "role": {
+      "en": "Product Design",
+      "zh": "产品设计"
+    },
+    "description": {
+      "en": "UI/UX design expert, focusing on user experience research, interface visual design, and interaction logic optimization, aiming to create digital products that are both user-friendly and aesthetically pleasing.",
+      "zh": "UI/UX 设计专家，专注于用户体验研究、界面视觉设计、交互逻辑优化，致力于打造易用性与美观度兼具的数字产品。"
+    },
     "xlink": "https://x.com/guobuqiran1821",
     "github": "https://github.com/ckjxxf",
     "head": "kk"
   },
   {
     "name": "P",
-    "role": "市场运营, 产品设计",
-    "description": "专注区块链应用落地，参与管理稳定币、DEX、DeFi项目0-1。",
+    "role": {
+      "en": "Market Operation, Product Design",
+      "zh": "市场运营, 产品设计"
+    },
+    "description": {
+      "en": "Focusing on blockchain application implementation, participating in the management of stablecoins, DEX, and DeFi projects from 0 to 1.",
+      "zh": "专注区块链应用落地，参与管理稳定币、DEX、DeFi项目0-1。"
+    },
     "xlink": "https://x.com/awakeypunky",
     "github": "https://github.com/AwakeyPunky",
     "head": "pp"
   },
   {
     "name": "Erica Deng",
-    "role": "市场运营",
-    "description": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。",
-    "xlink": "https://x.com/imcacadeng",
+    "role": {
+      "en": "Market Operation",
+      "zh": "市场运营"
+    },
+    "description": {
+      "en": "Unicamp, fluent in English, Portuguese, and Chinese, focusing on WEB3 market expansion and resource linkage.",
+      "zh": "Unicamp，中英葡三语，专注于WEB3市场扩展与资源链接。"
+    },
+    "xlink": "https://x.com/ricaca00",
     "github": "https://github.com/YOURERICACA",
     "head": "ed"
   },
   {
     "name": "DrLin1896",
-    "role": "市场运营",
-    "description": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。",
+    "role": {
+      "en": "Market Operation",
+      "zh": "市场运营"
+    },
+    "description": {
+      "en": "Biomedical PhD, pharmaceutical scientist, dedicated to molecular drug simulation, new drug development, and open science movement.",
+      "zh": "生物醫學博士，藥物科學家，致力於分子藥物模擬、新藥開發、開放科學運動。"
+    },
     "xlink": "https://x.com/destinylin1113?t=-Bz1tL0IGvStxpfH3YoC9w&s=09",
     "github": "https://www.threads.net/\\@drlin1895",
     "head": "dr"
   },
   {
     "name": "KingmenHuang",
-    "role": "市场运营",
-    "description": "高分子材料应用专家，区块链早期玩家，致力于区块链应用落地推广",
+    "role": {
+      "en": "Market Operation",
+      "zh": "市场运营"
+    },
+    "description": {
+      "en": "Polymer materials application expert, blockchain early player, dedicated to blockchain application promotion.",
+      "zh": "高分子材料应用专家，区块链早期玩家，致力于区块链应用落地推广"
+    },
     "xlink": "https://x.com/KingmenHuang",
     "github": "http://github.com/kingmenHuang",
     "head": "kh"
