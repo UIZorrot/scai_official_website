@@ -32,7 +32,7 @@
 
           <!-- Telegram -->
           <a
-             href="https://t.me/SCAI_Official"
+             href="https://t.me/+AMy9MvWuVqhlNDY1"
              target="_blank"
              rel="noopener noreferrer"
              class="flex items-center justify-center w-10 h-10 bg-gray-700 rounded-full text-white transition-colors hover:bg-gray-600">
