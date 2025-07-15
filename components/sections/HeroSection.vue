@@ -91,7 +91,7 @@
         <!-- 统计数据 -->
         <div class="grid grid-cols-1 gap-3 px-2 pt-12 sm:grid-cols-2 sm:gap-4 md:grid-cols-4 sm:gap-6 sm:pt-16 sm:px-4">
           <div v-for="stat in stats" :key="stat.label"
-               class="p-3 text-center rounded-lg border border-solid border-white backdrop-blur-sm bg-white/20 sm:p-4">
+               class="p-3 text-center rounded-lg border border-solid border-white backdrop-blur-sm bg-[rgba(0,0,0,0.2)] sm:p-4">
             <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {{ stat.value }}
             </div>
