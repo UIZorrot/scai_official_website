@@ -18,7 +18,7 @@
           <div
                v-for="member in teamMembers"
                :key="member.name"
-               class="p-8 bg-white rounded-2xl shadow-xl border border-gray-100 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] dark:hover:shadow-gray-900/50 ">
+               class="p-8 bg-white rounded-2xl  b b-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300  hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer ">
             <div class="flex flex-col items-center text-center md:flex-row md:text-left md:items-start">
               <!-- 头像 -->
               <div class="mb-6 md:mb-0 md:mr-8">

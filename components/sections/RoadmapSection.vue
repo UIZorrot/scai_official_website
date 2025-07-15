@@ -11,14 +11,18 @@
             <!-- 路线图季度列表 -->
             <div class="mx-auto space-y-4 max-w-4xl">
                 <!-- 动态渲染所有季度 -->
-                <div v-for="quarter in quarters" :key="quarter.id" class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 transition-all duration-300 shadow-md hover:shadow-xl">
+                <div v-for="quarter in quarters" :key="quarter.id"
+                     class="  dark:border-gray-700   transition-all duration-300 border-b-1">
                     <!-- 季度标题 - 可点击 -->
-                    <div @click="toggleQuarter(quarter.id)" class="flex justify-between items-center p-4 cursor-pointer transition-colors duration-200 dark:hover:bg-gray-800">
+                    <div @click="toggleQuarter(quarter.id)"
+                         class="flex justify-between items-center p-4 cursor-pointer transition-colors duration-200 dark:hover:bg-gray-800">
                         <div>
                             <h3 class="text-lg font-bold text-heading">{{ $t(`roadmap.${quarter.id}.title`) }}</h3>
-                            <p class="text-sm text-caption">{{ $t(`roadmap.${quarter.id}.subtitle`) }}</p>
+                            <p class="text-sm font-bold text-heading">{{ $t(`roadmap.${quarter.id}.subtitle`) }}</p>
                         </div>
-                        <svg class="w-5 h-5 text-gray-400 transition-transform duration-300" :class="{ 'rotate-180': expandedQuarters.includes(quarter.id) }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                             :class="{ 'rotate-180': expandedQuarters.includes(quarter.id) }" fill="none"
+                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </div>
@@ -26,11 +30,16 @@
                     <!-- 展开的内容 - 带动画 -->
                     <Transition name="expand">
                         <div v-if="expandedQuarters.includes(quarter.id)" class="overflow-hidden">
-                            <div class="px-4 pb-4 space-y-3">
+                            <div class="pb-4 space-y-3">
                                 <!-- 动态渲染每个季度的任务 -->
-                                <div v-for="[taskKey, task] in Object.entries(quarter.tasks)" :key="taskKey" class="flex justify-between items-center p-3 rounded border transition-all duration-200 hover:shadow-md" :class="getTaskStatusClass(task.status)">
-                                    <span class="text-sm text-body">{{ getLocale(task) }}</span>
-                                    <span class="px-2 py-1 text-xs font-medium rounded" :class="getStatusBadgeClass(task.status)">
+                                <div v-for="[taskKey, task] in Object.entries(quarter.tasks)" :key="taskKey"
+                                     class="flex justify-between items-center p-3 rounded border transition-all duration-200  rounded-lg cursor-pointer "
+                                     :class="getTaskStatusClass(task.status)">
+                                    <!-- 任务名称 -->
+                                    <span class="text-sm  font-medium font-weight-500"
+                                          :class="getTaskTextClass(task.status)">{{ getLocale(task) }}</span>
+                                    <span class="px-2 py-1 font-size-3.5  font-medium font-weight-500"
+                                          :class="getStatusBadgeClass(task.status)">
                                         {{ getLocale(task.status) }}
                                     </span>
                                 </div>
@@ -299,11 +308,11 @@ const getLocale = computed(() => (zhData: { zh: string; en: string }) => {
 const getTaskStatusClass = (status: { zh: string; en: string }) => {
     const statusText = getLocale.value(status).toLowerCase()
     if (statusText.includes('已完成') || statusText.includes('completed')) {
-        return 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+        return 'bg-[rgba(9,159,39,0.15)] '
     } else if (statusText.includes('进行中') || statusText.includes('progress')) {
-        return 'bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800'
+        return 'bg-blue-50 dark:bg-blue-900/20 '
     } else {
-        return 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+        return 'bg-red-50 dark:bg-red-900/20'
     }
 }
 
@@ -311,11 +320,22 @@ const getTaskStatusClass = (status: { zh: string; en: string }) => {
 const getStatusBadgeClass = (status: { zh: string; en: string }) => {
     const statusText = getLocale.value(status).toLowerCase()
     if (statusText.includes('已完成') || statusText.includes('completed')) {
-        return 'text-green-800 dark:text-green-200 bg-green-100 dark:bg-green-800'
+        return 'text-green-800 dark:text-[rgba(9, 195, 39, 0.15)]'
     } else if (statusText.includes('进行中') || statusText.includes('progress')) {
-        return 'text-blue-800 dark:text-blue-200 bg-blue-100 dark:bg-blue-800'
+        return 'text-blue-800 dark:text-[rgba(0, 0, 255, 0.15)]'
     } else {
-        return 'text-red-800 dark:text-red-200 bg-red-100 dark:bg-red-800'
+        return 'text-red-800 dark:text-[rgba(255, 51, 20, 0.15)]'
+    }
+}
+
+const getTaskTextClass = (status: { zh: string; en: string }) => {
+    const statusText = getLocale.value(status).toLowerCase()
+    if (statusText.includes('已完成') || statusText.includes('completed')) {
+        return 'text-green-800 dark:text-[rgba(9, 195, 39, 0.8)]'
+    } else if (statusText.includes('进行中') || statusText.includes('progress')) {
+        return 'text-black dark:text-white'
+    } else {
+        return 'text-black dark:text-white'
     }
 }
 </script>

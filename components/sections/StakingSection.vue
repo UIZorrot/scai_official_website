@@ -24,7 +24,7 @@
         <div class="grid grid-cols-1 gap-6 mb-12 md:grid-cols-3">
           <!-- Foundation Fund -->
           <div
-               class="p-8 text-center bg-white rounded-lg shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
+               class="p-8 text-center bg-white rounded-lg  b b-solid border-gray-200  dark:bg-gray-800 dark:border-gray-700 transition-all duration-300  hover:scale-105 cursor-pointer">
             <h3 class="mb-4 text-xl font-bold text-heading">
               {{ $t('staking.foundationFund') }}
             </h3>
@@ -35,7 +35,7 @@
 
           <!-- Governance -->
           <div
-               class="p-8 text-center bg-white rounded-lg shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
+               class="p-8 text-center bg-white rounded-lg  b b-solid border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300  hover:scale-105 cursor-pointer">
             <h3 class="mb-4 text-xl font-bold text-heading">
               {{ $t('staking.governance') }}
             </h3>
@@ -46,7 +46,7 @@
 
           <!-- Rewards -->
           <div
-               class="p-8 text-center bg-white rounded-lg shadow-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 cursor-pointer">
+               class="p-8 text-center bg-white rounded-lg  b b-solid border-gray-200 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300  hover:scale-105 cursor-pointer">
             <h3 class="mb-4 text-xl font-bold text-heading">
               {{ $t('staking.rewards') }}
             </h3>

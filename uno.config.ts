@@ -200,6 +200,7 @@ export default defineConfig({
     // 动画延迟类
     ['animation-delay-2000', { 'animation-delay': '2s' }],
     ['animation-delay-4000', { 'animation-delay': '4s' }],
+    ['border-b-1', { 'border-bottom': '1px solid rgba(0, 0, 0, 0.15)' }],
   ],
 
   // 快捷方式
