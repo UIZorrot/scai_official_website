@@ -86,6 +86,18 @@
     "title": "团队",
     "subtitle": "SCAI的团队核心人员相互之间平等，采用完全去中心化的方式进行自治式管理"
   },
+  "partners": {
+    "title": "合作伙伴",
+    "subtitle": "SCAI的合作伙伴",
+    "irys": {
+      "title": "IRYS",
+      "subtitle": "Irys是去中心化存储的领导者，为SCAI提供存储解决方案"
+    },
+    "desai": {
+      "title": "Desai.XYZ",
+      "subtitle": "建立一个人人可以参与的人工智能和 Web 3.0 驱动的科学、技术与长寿创新生态系统"
+    }
+  },
   "roadmap": {
     "title": "项目路线图",
     "2025Q3": {

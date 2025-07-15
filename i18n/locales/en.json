@@ -88,6 +88,18 @@
     "memberRole": "AI Research & Blockchain Chief Scientist",
     "memberDescription": "Former MIT researcher with 10+ years in AI and distributed systems"
   },
+  "partners": {
+    "title": "OUR PARTNERS",
+    "subtitle": "Our partners are the foundation of our ecosystem",
+    "irys": {
+      "title": "IRYS",
+      "subtitle": "The Datachain That Unlocks the Value of Data."
+    },
+    "desai": {
+      "title": "DeSAI.XYZ",
+      "subtitle": "Building An AI and Web 3.0-empowered Science, Technology and Longevity Innovation Ecosystem that Everyone Can Participate."
+    }
+  },
   "roadmap": {
     "title": "PROJECT ROADMAP",
     "2025Q3": {
