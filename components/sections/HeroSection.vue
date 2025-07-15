@@ -2,10 +2,7 @@
   <section class="flex overflow-hidden relative justify-center items-center min-h-screen">
     <!-- 背景图片 -->
     <div class="absolute inset-0">
-      <img
-           src="~/assets/images/bg.png"
-           alt="Hero Background"
-           class="object-cover w-full h-full" />
+      <img src="~/assets/images/bg.png" alt="Hero Background" class="object-cover w-full h-full" />
     </div>
 
     <!-- 鸟类飞行装饰图案 -->
@@ -57,19 +54,18 @@
         <div class="px-4 space-y-4 sm:px-0">
           <h1
               class="text-3xl font-bold leading-tight text-white dark:text-gray-100 sm:text-4xl md:text-6xl lg:text-7xl">
-            {{ $t('hero.title') }}
+            {{ $t("hero.title") }}
           </h1>
 
           <!-- 副标题 -->
           <h2
               class="px-4 mx-auto max-w-4xl text-xl font-semibold leading-relaxed sm:text-2xl md:text-3xl text-white/90 dark:text-gray-200 sm:px-0">
-            {{ $t('hero.subtitle') }}
+            {{ $t("hero.subtitle") }}
           </h2>
 
           <!-- 描述文本 -->
-          <p
-             class="px-4 pt-4 mx-auto max-w-4xl text-lg leading-relaxed text-blue-50 sm:text-xl sm:px-0">
-            {{ $t('hero.description') }}
+          <p class="px-4 pt-4 mx-auto max-w-4xl text-lg leading-relaxed text-blue-50 sm:text-xl sm:px-0">
+            {{ $t("hero.description") }}
           </p>
         </div>
 
@@ -79,28 +75,26 @@
                   class="btn btn-hero-primary cursor-pointer rounded-0"
                   @click="handClick('https://foundation.scai.sh/')">
             {{ $t('hero.exploreEcosystem') }}
-            <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-          </button>
+            <button class="btn btn-hero-primary" @click="handClick('https://app.scai.sh/')">
+              {{ $t("hero.exploreEcosystem") }}
+              <ArrowRightIcon class="inline ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </button>
 
-          <!-- <button
+            <!-- <button
                   class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]">
             {{ $t('hero.readWhitepaper') }}
           </button> -->
 
-          <button
-                  class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)] cursor-pointer rounded-0"
-                  @click="handClick('https://search.scai.sh/')">
-            {{ $t('hero.OpenApp') }}
-
-          </button>
+            <button class="btn btn-hero-secondary border-[#FF3314] bg-[rgba(255,51,20,0.15)]"
+                    @click="handClick('https://foundation.scai.sh/')">
+              {{ $t("hero.exploreEcosystem") }}
+            </button>
         </div>
 
         <!-- 统计数据 -->
         <div class="grid grid-cols-1 gap-3 px-2 pt-12 sm:grid-cols-2 sm:gap-4 md:grid-cols-4 sm:gap-6 sm:pt-16 sm:px-4">
-          <div
-               v-for="stat in stats"
-               :key="stat.label"
-               class="p-3 text-center rounded-lg border border-solid border-white backdrop-blur-sm bg-[rgba(0,0,0,0.2)]  sm:p-4">
+          <div v-for="stat in stats" :key="stat.label"
+               class="p-3 text-center rounded-lg border border-solid border-white backdrop-blur-sm bg-white/20 sm:p-4">
             <div class="text-xl font-bold text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {{ stat.value }}
             </div>
@@ -120,24 +114,22 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRightIcon, ChevronDownIcon } from '@heroicons/vue/24/outline'
+import { ArrowRightIcon, ChevronDownIcon } from "@heroicons/vue/24/outline";
 
 // 国际化
-const { t } = useI18n()
+const { t } = useI18n();
 
 // 统计数据
 const stats = computed(() => [
-  { value: '413,080', label: t('stats.papers') },
-  { value: '17k+', label: t('stats.institutions') },
-  { value: '7k+', label: t('stats.partners') },
-  { value: '99.9%', label: t('stats.uptime') }
-])
+  { value: "102,839", label: t("stats.papers") },
+  { value: "17k+", label: t("stats.institutions") },
+  { value: "7k+", label: t("stats.partners") },
+  { value: "99.9%", label: t("stats.uptime") },
+]);
 
 const handClick = (url: string) => {
-  window.open(url, '_blank')
-}
-
-
+  window.open(url, "_blank");
+};
 </script>
 
 <style scoped>
