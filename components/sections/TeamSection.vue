@@ -160,8 +160,8 @@ const teamMembers = [
       "zh": "市场运营"
     },
     "description": {
-      "en": "Unicamp, fluent in English, Portuguese, and Chinese",
-      "zh": "Unicamp，中英葡三语"
+      "en": "WEB3 Business Development and marketing",
+      "zh": "WEB3业务发展和营销"
     },
     "xlink": "https://x.com/ricaca00",
     "github": "https://github.com/YOURERICACA",
