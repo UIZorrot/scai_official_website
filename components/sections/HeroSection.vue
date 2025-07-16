@@ -49,9 +49,9 @@
 
     <!-- 主要内容 -->
     <div class="relative z-10 px-4 mx-auto max-w-7xl text-center sm:px-6 lg:px-8">
-      <div class="space-y-8 sm:py-10">
+      <div class="space-y-8 sm:py-10 py-10">
         <!-- 主标题 -->
-        <div class="px-4 space-y-4 sm:px-0">
+        <div class="px-4 space-y-4">
           <h1
               class="text-3xl font-bold leading-tight text-white dark:text-gray-100 sm:text-4xl md:text-6xl lg:text-7xl">
             {{ $t("hero.title") }}
