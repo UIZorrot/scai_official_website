@@ -3,17 +3,11 @@
     <!-- Hero 区域 -->
     <HeroSection />
 
-    <!-- Agents 协作区域 -->
-    <!-- <AgentsSection /> -->
-
     <!-- Staking & Rewards 区域 -->
     <StakingSection />
 
     <!-- 产品画廊区域 -->
     <ProductGallery />
-
-    <!-- 网络分析区域 -->
-    <!-- <NetworkAnalytics /> -->
 
     <!-- 团队介绍区域 -->
     <TeamSection />
