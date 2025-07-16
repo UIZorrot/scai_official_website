@@ -38,7 +38,7 @@
 
           <!-- 访问按钮 -->
           <button
-                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300  hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
+                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300  hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
                   @click="handClick('https://search.scai.sh/')">
             {{ $t('products.scaiSearch.visitPlatform') }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
 
           <!-- 访问按钮 -->
           <button
-                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
+                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
                   @click="handClick('https://scibox.store/')">
             {{ $t('products.sciBoxStore.visitPlatform') }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

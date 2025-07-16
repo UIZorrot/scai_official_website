@@ -104,8 +104,8 @@ const teamMembers = [
       "zh": "技术专家"
     },
     "description": {
-      "en": "Decentralized manufacturing enthusiast",
-      "zh": "去中心化制造爱好者"
+      "en": "Serverless DApp Developer",
+      "zh": "无服务器DApp开发者"
     },
     "xlink": "https://x.com/seseleek/",
     "github": "https://github.com/hextrump/",

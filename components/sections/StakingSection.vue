@@ -61,7 +61,7 @@
           <NuxtLink
                     to="https://foundation.scai.sh/"
                     target="_blank"
-                    class="inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-red-500 rounded-lg shadow-lg transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 no-underline">
+                    class="inline-flex items-center px-8 py-4 text-lg font-bold text-white bg-red-500 rounded-0 shadow-lg transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-300 dark:focus:ring-red-800 no-underline">
             {{ $t('staking.visitFoundation') }}
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
