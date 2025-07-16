@@ -27,6 +27,8 @@
 </template>
 
 <script setup lang="ts">
+import "@unocss/reset/normalize.css";
+
 // 页面元数据
 useHead({
   title: "SCAI - Web3 Brain for Science",

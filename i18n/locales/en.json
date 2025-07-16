@@ -89,16 +89,8 @@
     "memberDescription": "Former MIT researcher with 10+ years in AI and distributed systems"
   },
   "partners": {
-    "title": "OUR PARTNERS",
-    "subtitle": "Our partners are the foundation of our ecosystem",
-    "irys": {
-      "title": "IRYS",
-      "subtitle": "The Datachain That Unlocks the Value of Data."
-    },
-    "desai": {
-      "title": "DeSAI.XYZ",
-      "subtitle": "Building An AI and Web 3.0-empowered Science, Technology and Longevity Innovation Ecosystem that Everyone Can Participate."
-    }
+    "title": "PARTNERS",
+    "subtitle": "Our partners are the foundation of our ecosystem"
   },
   "roadmap": {
     "title": "PROJECT ROADMAP",
