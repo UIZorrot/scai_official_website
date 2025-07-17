@@ -17,7 +17,7 @@
               v-for="item in navigation"
               :key="item.name"
               :href="item.href"
-              @click="handleNavClick"
+              target="_blank"
               class="px-3 py-2 text-sm font-medium text-white dark:text-white rounded-md transition-colors duration-200 hover:text-red-500 dark:hover:text-white/80 no-underline"
               :class="{
                 'text-white dark:text-white font-semibold': activeSection === item.href.slice(1),
@@ -62,7 +62,7 @@
               v-for="item in navigation"
               :key="item.name"
               :href="item.href"
-              @click="handleNavClick"
+              target="_blank"
               class="block px-3 py-2 text-base font-medium text-white rounded-md transition-colors duration-200 hover:bg-red-500 dark:hover:text-white/80 hover:bg-gray-100 no-underline"
               :class="{
                 'text-white font-semibold bg-white/20': activeSection === item.href.slice(1),
@@ -85,8 +85,8 @@ const { t } = useI18n();
 
 // 导航菜单项
 const navigation = computed(() => [
-  { name: t("nav.scaich"), href: "https://search.scai.sh/" },
-  { name: t("nav.scibox"), href: "https://scibox.store/" },
+  { name: t("nav.scaich"), href: "https://app.scai.sh/app/search" },
+  { name: t("nav.scibox"), href: "https://app.scai.sh/app/box" },
   { name: t("nav.foundation"), href: "https://foundation.scai.sh/" },
   { name: t("nav.community"), href: "https://discord.gg/2kM8dRd5" },
 ]);
@@ -99,29 +99,10 @@ const activeSection = ref("");
 const route = useRoute();
 
 // 平滑滚动导航处理
-const handleNavClick = (event: Event) => {
-  event.preventDefault();
-  const target = event.target as HTMLAnchorElement;
-  const href = target.getAttribute("href");
-
-  // 关闭移动端菜单
-  mobileMenuOpen.value = false;
-
-  if (href === "/") {
-    // 回到顶部
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    activeSection.value = "";
-  } else if (href?.startsWith("#")) {
-    // 滚动到锚点
-    const elementId = href.slice(1);
-    const element = document.getElementById(elementId);
-    if (element) {
-      const headerHeight = 80; // 固定头部高度
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({ top: elementPosition, behavior: "smooth" });
-      activeSection.value = elementId;
-    }
-  }
+const handleNavClick = (href: string) => {
+  //打开新的页面
+  console.log(href);
+  window.open(href, "_blank");
 };
 
 // 监听滚动，更新活动section

@@ -4,10 +4,10 @@
       <!-- 标题区域 -->
       <div class="mb-12 text-center">
         <h2 class="mb-4 text-3xl font-bold text-heading-large md:text-4xl">
-          {{ $t('products.title') }}
+          {{ $t("products.title") }}
         </h2>
         <p class="mx-auto max-w-4xl text-lg text-secondary">
-          {{ $t('products.subtitle') }}
+          {{ $t("products.subtitle") }}
         </p>
       </div>
 
@@ -17,30 +17,25 @@
         <div class="text-center">
           <!-- 产品截图 -->
           <div class="overflow-hidden mb-6 rounded-lg shadow-lg">
-            <img
-                 src="~/assets/images/1-1.png"
-                 alt="SCAI Search Interface"
-                 class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
+            <img src="~/assets/images/1-1.jpg" alt="SCAI Search Interface" class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
           </div>
 
           <!-- 产品信息 -->
           <div class="mb-6">
             <h3 class="mb-2 text-2xl font-bold text-heading">
-              {{ $t('products.scaiSearch.title') }}
+              {{ $t("products.scaiSearch.title") }}
             </h3>
             <p class="mb-4 text-lg text-body">
-              {{ $t('products.scaiSearch.subtitle') }}
+              {{ $t("products.scaiSearch.subtitle") }}
             </p>
             <p class="text-sm leading-relaxed text-caption">
-              {{ $t('products.scaiSearch.description') }}
+              {{ $t("products.scaiSearch.description") }}
             </p>
           </div>
 
           <!-- 访问按钮 -->
-          <button
-                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300  hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
-                  @click="handClick('https://search.scai.sh/')">
-            {{ $t('products.scaiSearch.visitPlatform') }}
+          <button class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer" @click="handClick('https://app.scai.sh/app/search')">
+            {{ $t("products.scaiSearch.visitPlatform") }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -51,30 +46,25 @@
         <div class="text-center">
           <!-- 产品截图 -->
           <div class="overflow-hidden mb-6 rounded-lg shadow-lg">
-            <img
-                 src="~/assets/images/2-1.png"
-                 alt="SciBox Interface"
-                 class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
+            <img src="~/assets/images/2-1.jpg" alt="SciBox Interface" class="object-cover w-full cursor-pointer hover:scale-105 transition-all duration-300" />
           </div>
 
           <!-- 产品信息 -->
           <div class="mb-6">
             <h3 class="mb-2 text-2xl font-bold text-heading">
-              {{ $t('products.sciBoxStore.title') }}
+              {{ $t("products.sciBoxStore.title") }}
             </h3>
             <p class="mb-4 text-lg text-body">
-              {{ $t('products.sciBoxStore.subtitle') }}
+              {{ $t("products.sciBoxStore.subtitle") }}
             </p>
             <p class="text-sm leading-relaxed text-caption">
-              {{ $t('products.sciBoxStore.description') }}
+              {{ $t("products.sciBoxStore.description") }}
             </p>
           </div>
 
           <!-- 访问按钮 -->
-          <button
-                  class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer"
-                  @click="handClick('https://scibox.store/')">
-            {{ $t('products.sciBoxStore.visitPlatform') }}
+          <button class="text-lg inline-flex items-center px-8 py-3 font-bold text-white bg-red-500 rounded-0 transition-all duration-300 hover:bg-red-600 hover:shadow-xl hover:scale-105 border border-red-500 cursor-pointer" @click="handClick('https://app.scai.sh/app/box')">
+            {{ $t("products.sciBoxStore.visitPlatform") }}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -87,11 +77,11 @@
 
 <script setup lang="ts">
 // 国际化
-const { t } = useI18n()
+const { t } = useI18n();
 
 const handClick = (url: string) => {
-  window.open(url, '_blank')
-}
+  window.open(url, "_blank");
+};
 </script>
 
 <style scoped>

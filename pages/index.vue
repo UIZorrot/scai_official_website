@@ -3,11 +3,11 @@
     <!-- Hero 区域 -->
     <HeroSection />
 
-    <!-- Staking & Rewards 区域 -->
-    <StakingSection />
-
     <!-- 产品画廊区域 -->
     <ProductGallery />
+
+    <!-- Staking & Rewards 区域 -->
+    <StakingSection />
 
     <!-- 团队介绍区域 -->
     <TeamSection />
