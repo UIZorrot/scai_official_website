@@ -1,9 +1,8 @@
 {
   "nav": {
-    "scaich": "Search",
-    "scibox": "Box",
+    "scaich": "App",
     "foundation": "Foundation",
-    "community": "Press",
+    "community": "Community",
     "connectWallet": "CONNECT WALLET",
     "more": "More",
     "settings": "Settings",

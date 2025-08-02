@@ -86,9 +86,8 @@ const { t } = useI18n()
 // 导航菜单项
 const navigation = computed(() => [
   { name: t('nav.scaich'), href: 'https://app.scai.sh/app/search' },
-  { name: t('nav.scibox'), href: 'https://app.scai.sh/app/box' },
   { name: t('nav.foundation'), href: 'https://foundation.scai.sh/' },
-  { name: t('nav.community'), href: 'https://discord.gg/2kM8dRd5' },
+  { name: t('nav.community'), href: 'https://t.me/+AMy9MvWuVqhlNDY1' },
 ])
 
 // 响应式状态
