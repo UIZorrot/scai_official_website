@@ -35,6 +35,42 @@
               <img src="@/assets/images/partners/wtf.png" alt="DESAI.XYZ" class="w-189px h-140px object-contain" />
             </div>
           </div>
+          <!-- DJDOG 合作伙伴 -->
+          <div
+               class="p-8 bg-black rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
+            <div class="flex flex-col items-center text-center space-y-4">
+              <img src="@/assets/images/partners/djdog.png" alt="DJDOG" class="w-189px h-140px object-contain" />
+            </div>
+          </div>
+          <!-- Dlife 合作伙伴 -->
+          <div
+               class="p-8 bg-black rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
+            <div class="flex flex-col items-center text-center space-y-4">
+              <img src="@/assets/images/partners/dlife.png" alt="Dlife" class="w-189px h-140px object-contain" />
+            </div>
+          </div>
+          <!-- Z2H 合作伙伴 -->
+          <div
+               class="p-8 bg-black rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
+            <div class="flex flex-col items-center text-center space-y-4">
+              <img src="@/assets/images/partners/z2h.png" alt="Z2H" class="w-189px h-140px object-contain" />
+            </div>
+          </div>
+          <!-- Trol 合作伙伴 -->
+          <div
+               class="p-8 bg-black rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
+            <div class="flex flex-col items-center text-center space-y-4">
+              <img src="@/assets/images/partners/trol.png" alt="Trol" class="w-189px h-140px object-contain" />
+            </div>
+          </div>
+          <!-- Coconnect 合作伙伴 -->
+          <div
+               class="p-8 bg-black rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
+            <div class="flex flex-col items-center text-center space-y-4">
+              <img src="@/assets/images/partners/coconnect.png" alt="Coconnect"
+                   class="w-189px h-140px object-contain" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
