@@ -88,6 +88,43 @@
           </button>
         </div>
 
+        <!-- Contract Address Banner -->
+        <div class="mx-auto mt-8 max-w-4xl border-white/30">
+          <div
+            @click="copyToClipboard('6g3FkkCcDXh6PGUSVAXN1AKbpyzQtygj7SATK41bonk')"
+            class="p-4 rounded-lg border border-solid border-white backdrop-blur-sm bg-black/20 cursor-pointer hover:bg-black/30 transition-all duration-200"
+            title="Click to copy contract address"
+          >
+            <div class="text-center">
+              <div class="text-sm font-semibold text-white/80 uppercase tracking-wider">
+                Token Mint Address (CA) : 6g3FkkCcDXh6PGUSVAXN1AKbpyzQtygj7SATK41bonk
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <Transition
+          enter-active-class="transition ease-out duration-300"
+          enter-from-class="transform opacity-0 translate-y-2"
+          enter-to-class="transform opacity-100 translate-y-0"
+          leave-active-class="transition ease-in duration-200"
+          leave-from-class="transform opacity-100 translate-y-0"
+          leave-to-class="transform opacity-0 translate-y-2"
+        >
+          <div
+            v-if="showToast"
+            class="fixed top-4 right-4 z-50 p-4 rounded-lg border border-green-400/30 backdrop-blur-sm bg-green-500/20 text-white shadow-lg"
+          >
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-sm font-medium">Contract address copied to clipboard!</span>
+            </div>
+          </div>
+        </Transition>
+
         <!-- 统计数据 -->
         <div class="grid grid-cols-1 gap-3 px-2 pt-12 sm:grid-cols-2 sm:gap-4 md:grid-cols-4 sm:gap-6 sm:pt-16 sm:px-4">
           <div v-for="stat in stats" :key="stat.label"
@@ -116,6 +153,9 @@ import { ArrowRightIcon, ChevronDownIcon } from "@heroicons/vue/24/outline";
 // 国际化
 const { t } = useI18n();
 
+// Toast notification state
+const showToast = ref(false);
+
 // 统计数据
 const stats = computed(() => [
   { value: "102,839", label: t("stats.papers") },
@@ -126,6 +166,34 @@ const stats = computed(() => [
 
 const handClick = (url: string) => {
   window.open(url, "_blank");
+};
+
+// 复制到剪贴板功能
+const copyToClipboard = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast.value = true;
+    setTimeout(() => {
+      showToast.value = false;
+    }, 3000);
+  } catch (err) {
+    console.error('Failed to copy: ', err);
+    // 降级方案：使用传统的复制方法
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      showToast.value = true;
+      setTimeout(() => {
+        showToast.value = false;
+      }, 3000);
+    } catch (copyErr) {
+      console.error('Fallback copy failed: ', copyErr);
+    }
+    document.body.removeChild(textArea);
+  }
 };
 </script>
 
