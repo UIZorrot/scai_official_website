@@ -13,26 +13,13 @@
 
       <div class="mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mx-auto">
-          <!-- IRYS 合作伙伴 -->
           <div
-               class="p-8 bg-white rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
-            <div class="flex flex-col items-center text-center space-y-4">
-              <img src="@/assets/images/partners/irys.png" alt="IRYS" class="w-189px h-140px object-contain" />
-            </div>
-          </div>
-
-          <!-- DESAI.XYZ 合作伙伴 -->
-          <div
-               class="p-8 bg-white rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
-            <div class="flex flex-col items-center text-center space-y-4">
-              <img src="@/assets/images/partners/desai.png" alt="DESAI.XYZ" class="w-189px h-140px object-contain" />
-            </div>
-          </div>
-          <!-- WTF 合作伙伴 -->
-          <div
-               class="p-8 bg-white rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer">
-            <div class="flex flex-col items-center text-center space-y-4">
-              <img src="@/assets/images/partners/wtf.png" alt="DESAI.XYZ" class="w-189px h-140px object-contain" />
+               v-for="item in partners"
+               class="p-8 bg-white rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer flex items-center justify-center">
+            <div class="flex items-center text-center space-y-4" @click="handleOpen(item.url)">
+              <img :src="useAssetsImage(`images/partners/${item.image}`)" :alt="item.name"
+                   class="w-189px h-140px object-contain" />
+              <p class="text-4xl font-bold dark:bg-gray-800 sm:text-xl">{{ item.name }}</p>
             </div>
           </div>
         </div>
@@ -44,6 +31,26 @@
 <script setup lang="ts">
 // 国际化
 const { t } = useI18n();
+const { useAssetsImage } = useAssets()
+
+
+const partners = [
+  { name: 'IRYS', image: 'irys.png', url: "https://irys.xyz/" },
+  { name: 'DESAI.XYZ', image: 'desai.png', url: "https://x.com/DeSAI_xyz" },
+  { name: 'WTF', image: 'wtf.png', url: " https://irys.xyz/" },
+  { name: 'DJDOG', image: 'djdog.png', url: "https://dj.dog/" },
+  { name: 'Dlife', image: 'dlife.png', url: "https://dlife.xyz/" },
+  { name: 'Z2H_Academy', image: 'z2h.png', url: "https://x.com/Z2H_Web3" },
+  { name: 'TROL', image: 'trol.png', url: "https://x.com/trolpumpscience" },
+  { name: 'Co-Connect', image: 'coconnect.png', url: "https://x.com/CoConnect_" }
+];
+
+
+const handleOpen = (url: string) => {
+  if (url) {
+    window.open(url, '_blank');
+  }
+};
 </script>
 
 <style scoped>

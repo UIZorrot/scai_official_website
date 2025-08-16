@@ -126,7 +126,7 @@ const teamMembers = [
     "head": "yy"
   },
   {
-    "name": "果不其然",
+    "name": "Ryan Xiao",
     "role": {
       "en": "Product Design",
       "zh": "产品设计"

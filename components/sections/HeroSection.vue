@@ -158,10 +158,10 @@ const showToast = ref(false);
 
 // 统计数据
 const stats = computed(() => [
-  { value: "102,839", label: t("stats.papers") },
+  { value: "8000w", label: t("stats.papers") },
   { value: "17k+", label: t("stats.institutions") },
   { value: "7k+", label: t("stats.partners") },
-  { value: "99.9%", label: t("stats.uptime") },
+  { value: "100%", label: t("stats.uptime") },
 ]);
 
 const handClick = (url: string) => {
