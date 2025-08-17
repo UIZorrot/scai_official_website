@@ -11,14 +11,18 @@
       <!-- 路线图季度列表 -->
       <div class="mx-auto space-y-4 max-w-4xl">
         <!-- 动态渲染所有季度 -->
-        <div v-for="quarter in quarters" :key="quarter.id" class="dark:border-gray-700 transition-all duration-300 border-b-1">
+        <div v-for="quarter in quarters" :key="quarter.id"
+             class="dark:border-gray-700 transition-all duration-300 border-b-1">
           <!-- 季度标题 - 可点击 -->
-          <div @click="toggleQuarter(quarter.id)" class="flex justify-between items-center p-4 cursor-pointer transition-colors duration-200 dark:hover:bg-gray-800">
+          <div @click="toggleQuarter(quarter.id)"
+               class="flex justify-between items-center p-4 cursor-pointer transition-colors duration-200 dark:hover:bg-gray-800">
             <div>
               <h3 class="text-lg font-bold text-heading">{{ $t(`roadmap.${quarter.id}.title`) }}</h3>
               <p class="text-sm font-bold text-heading">{{ $t(`roadmap.${quarter.id}.subtitle`) }}</p>
             </div>
-            <svg class="w-5 h-5 text-gray-400 transition-transform duration-300" :class="{ 'rotate-180': expandedQuarters.includes(quarter.id) }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                 :class="{ 'rotate-180': expandedQuarters.includes(quarter.id) }" fill="none" stroke="currentColor"
+                 viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </div>
@@ -28,10 +32,14 @@
             <div v-if="expandedQuarters.includes(quarter.id)" class="overflow-hidden">
               <div class="pb-4 space-y-3">
                 <!-- 动态渲染每个季度的任务 -->
-                <div v-for="[taskKey, task] in Object.entries(quarter.tasks)" :key="taskKey" class="flex justify-between items-center p-3 rounded border transition-all duration-200 rounded-lg cursor-pointer" :class="getTaskStatusClass(task.status)">
+                <div v-for="[taskKey, task] in Object.entries(quarter.tasks)" :key="taskKey"
+                     class="flex justify-between items-center p-3 rounded border transition-all duration-200 rounded-lg cursor-pointer"
+                     :class="getTaskStatusClass(task.status)">
                   <!-- 任务名称 -->
-                  <span class="text-sm font-medium font-weight-500" :class="getTaskTextClass(task.status)">{{ getLocale(task) }}</span>
-                  <span class="px-2 py-1 font-size-3.5 font-medium font-weight-500" :class="getStatusBadgeClass(task.status)">
+                  <span class="text-sm font-medium font-weight-500" :class="getTaskTextClass(task.status)">{{
+                    getLocale(task) }}</span>
+                  <span class="px-2 py-1 font-size-3.5 font-medium font-weight-500"
+                        :class="getStatusBadgeClass(task.status)">
                     {{ getLocale(task.status) }}
                   </span>
                 </div>

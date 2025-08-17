@@ -16,10 +16,16 @@
           <div
                v-for="item in partners"
                class="p-8 bg-white rounded-xl border border-solid border-gray-200 dark:bg-gray-800 dark:border-gray-600 transition-all duration-300 hover:scale-[1.02] dark:hover:shadow-gray-900/50 cursor-pointer flex items-center justify-center">
-            <div class="flex items-center text-center space-y-4" @click="handleOpen(item.url)">
+            <div class="flex items-center text-center gap-1.5" @click="handleOpen(item.url)">
               <img :src="useAssetsImage(`images/partners/${item.image}`)" :alt="item.name"
-                   class="w-189px h-140px object-contain" />
-              <p class="text-xl font-bold dark:bg-gray-800 sm:text-4xl">{{ item.name }}</p>
+                   class="w-64px h-64px object-contain" />
+              <div class="flex flex-col items-start justify-center" v-if="item.name1">
+                <p class="text-xl font-bold dark:bg-gray-800 sm:text-2xl items-start">{{ item.name }}</p>
+                <p class="text-xl font-bold dark:bg-gray-800 sm:text-2xl">{{ item.name1 }}</p>
+              </div>
+              <div class="flex flex-col items-center" v-if="!item.name1">
+                <p class="text-xl font-bold dark:bg-gray-800 sm:text-2xl">{{ item.name }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -35,14 +41,15 @@ const { useAssetsImage } = useAssets()
 
 
 const partners = [
+  { name: 'SOLANA', name1: "DESCI", image: 'soldesci.png', url: "https://irys.xyz/" },
   { name: 'IRYS', image: 'irys.png', url: "https://irys.xyz/" },
-  { name: 'DESAI.XYZ', image: 'desai.png', url: "https://x.com/DeSAI_xyz" },
-  { name: 'WTF', image: 'wtf.png', url: " https://irys.xyz/" },
-  { name: 'DJDOG', image: 'djdog.png', url: "https://dj.dog/" },
-  { name: 'Dlife', image: 'dlife.png', url: "https://dlife.xyz/" },
-  { name: 'Z2H_Academy', image: 'z2h.png', url: "https://x.com/Z2H_Web3" },
+  { name: 'WTF', name1: "ACADEMY", image: 'wtf.png', url: " https://irys.xyz/" },
   { name: 'TROL', image: 'trol.png', url: "https://x.com/trolpumpscience" },
-  { name: 'Co-Connect', image: 'coconnect.png', url: "https://x.com/CoConnect_" }
+  { name: 'DJDOG', image: 'djdog.png', url: "https://dj.dog/" },
+  { name: 'DESAI.XYZ', image: 'desai.png', url: "https://x.com/DeSAI_xyz" },
+  { name: 'Co', name1: "Connect", image: 'coconnect.png', url: "https://x.com/CoConnect_" },
+  { name: 'Z2H', name1: "ACADEMY", image: 'z2h.png', url: "https://x.com/Z2H_Web3" },
+  { name: 'dlife', image: 'dlife.png', url: "https://dlife.xyz/" },
 ];
 
 
@@ -55,4 +62,8 @@ const handleOpen = (url: string) => {
 
 <style scoped>
 /* 团队页面样式 */
+p {
+  margin: 0;
+  padding: 0;
+}
 </style>

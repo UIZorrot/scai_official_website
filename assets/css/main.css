@@ -23,6 +23,11 @@ body {
   color: #fff;
 }
 
+/* p {
+  margin: 0;
+  padding: 0;
+} */
+
 
 /* 确保所有元素都不会超出视口宽度 */
 *, *::before, *::after {
