@@ -88,6 +88,7 @@ const navigation = computed(() => [
   { name: t('nav.scaich'), href: 'https://app.scai.sh/app/search' },
   { name: t('nav.foundation'), href: 'https://foundation.scai.sh/' },
   { name: t('nav.community'), href: 'https://t.me/+AMy9MvWuVqhlNDY1' },
+  { name: t('nav.whitepaper'), href: 'https://uploader.irys.xyz/6NqSNeQ92LnoL46ye3rmDDym8i889t1xLAn71semuwbC' },
 ])
 
 // 响应式状态

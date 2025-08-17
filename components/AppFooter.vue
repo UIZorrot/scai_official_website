@@ -5,9 +5,9 @@
         <!-- 左侧：Logo和标语 -->
         <div class="flex items-center space-x-3">
           <img
-               src="~/assets/images/header_icon.png"
+               src="~/assets/images/rocket-icon.png"
                alt="SCAI Logo"
-               class="object-contain w-12 h-12" />
+               class="object-contain w-12 h-12 rounded-full" />
           <div class="flex flex-col">
             <span class="text-2xl font-bold">SCAI</span>
             <span class="text-sm font-medium text-white dark:text-gray-200 text-center">
