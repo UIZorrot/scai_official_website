@@ -19,7 +19,7 @@
             <div class="flex items-center text-center space-y-4" @click="handleOpen(item.url)">
               <img :src="useAssetsImage(`images/partners/${item.image}`)" :alt="item.name"
                    class="w-189px h-140px object-contain" />
-              <p class="text-4xl font-bold dark:bg-gray-800 sm:text-xl">{{ item.name }}</p>
+              <p class="text-xl font-bold dark:bg-gray-800 sm:text-4xl">{{ item.name }}</p>
             </div>
           </div>
         </div>

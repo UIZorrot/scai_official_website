@@ -91,12 +91,11 @@
         <!-- Contract Address Banner -->
         <div class="mx-auto mt-8 max-w-4xl border-white/30">
           <div
-            @click="copyToClipboard('6g3FkkCcDXh6PGUSVAXN1AKbpyzQtygj7SATK41bonk')"
-            class="p-4 rounded-lg border border-solid border-white backdrop-blur-sm bg-black/20 cursor-pointer hover:bg-black/30 transition-all duration-200"
-            title="Click to copy contract address"
-          >
+               @click="copyToClipboard('6g3FkkCcDXh6PGUSVAXN1AKbpyzQtygj7SATK41bonk')"
+               class="p-4 rounded-lg border border-solid border-white backdrop-blur-sm bg-black/20 cursor-pointer hover:bg-black/30 transition-all duration-200"
+               title="Click to copy contract address">
             <div class="text-center">
-              <div class="text-sm font-semibold text-white/80 uppercase tracking-wider">
+              <div class="text-sm font-semibold text-white/80 uppercase tracking-wider break-words">
                 Token Mint Address (CA) : 6g3FkkCcDXh6PGUSVAXN1AKbpyzQtygj7SATK41bonk
               </div>
             </div>
@@ -105,17 +104,15 @@
 
         <!-- Toast Notification -->
         <Transition
-          enter-active-class="transition ease-out duration-300"
-          enter-from-class="transform opacity-0 translate-y-2"
-          enter-to-class="transform opacity-100 translate-y-0"
-          leave-active-class="transition ease-in duration-200"
-          leave-from-class="transform opacity-100 translate-y-0"
-          leave-to-class="transform opacity-0 translate-y-2"
-        >
+                    enter-active-class="transition ease-out duration-300"
+                    enter-from-class="transform opacity-0 translate-y-2"
+                    enter-to-class="transform opacity-100 translate-y-0"
+                    leave-active-class="transition ease-in duration-200"
+                    leave-from-class="transform opacity-100 translate-y-0"
+                    leave-to-class="transform opacity-0 translate-y-2">
           <div
-            v-if="showToast"
-            class="fixed top-4 right-4 z-50 p-4 rounded-lg border border-green-400/30 backdrop-blur-sm bg-green-500/20 text-white shadow-lg"
-          >
+               v-if="showToast"
+               class="fixed top-4 right-4 z-50 p-4 rounded-lg border border-green-400/30 backdrop-blur-sm bg-green-500/20 text-white shadow-lg">
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -156,6 +153,37 @@ const { t } = useI18n();
 // Toast notification state
 const showToast = ref(false);
 
+// Token price state
+const tokenPrice = ref<number | null>(null);
+const priceError = ref<string | null>(null);
+
+const { data, error, refresh } = await useFetch('/api/token-price', { immediate: true, lazy: false });
+
+if (error.value) {
+  priceError.value = 'Error fetching price';
+  console.error('Failed to fetch token price:', error.value);
+} else if (data.value) {
+  // Assuming the API returns { price: number } or { error: string }
+  if ((data.value as any).error) {
+    priceError.value = (data.value as any).error;
+    console.error('API error:', (data.value as any).details);
+  } else {
+    tokenPrice.value = (data.value as any).price;
+  }
+}
+
+const formattedPrice = computed(() => {
+  if (priceError.value) {
+    return 'N/A';
+  }
+  if (tokenPrice.value === null) {
+    return 'Loading...'; // Loading state
+  }
+  // Format to a suitable number of decimal places
+  return `$${tokenPrice.value.toFixed(6)}`;
+});
+
+
 // 统计数据
 const stats = computed(() => [
   { value: "8000w", label: t("stats.papers") },
@@ -195,6 +223,27 @@ const copyToClipboard = async (text: string) => {
     document.body.removeChild(textArea);
   }
 };
+
+// --- 定时刷新逻辑 ---
+let intervalId: ReturnType<typeof setInterval> | null = null;
+
+// onMounted: 组件挂载到 DOM 后执行
+onMounted(() => {
+  // 设置一个定时器，每 5000 毫秒 (5秒) 调用一次 refresh 函数
+  intervalId = setInterval(() => {
+    console.log('Refreshing price data...');
+    refresh(); // 这是 Nuxt 提供的刷新函数，非常方便
+  }, 5000);
+});
+
+// onUnmounted: 组件销毁前执行
+onUnmounted(() => {
+  // 清除定时器，防止内存泄漏
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+});
+
 </script>
 
 <style scoped>
