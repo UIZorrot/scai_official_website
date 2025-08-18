@@ -41,7 +41,7 @@ const { useAssetsImage } = useAssets()
 
 
 const partners = [
-  { name: 'SOLANA', name1: "DESCI", image: 'soldesci.png', url: "https://irys.xyz/" },
+  { name: 'SOLANA', name1: "DESCI", image: 'soldesci.png', url: "https://hub.xyz/solana-desci" },
   { name: 'IRYS', image: 'irys.png', url: "https://irys.xyz/" },
   { name: 'WTF', name1: "ACADEMY", image: 'wtf.png', url: " https://irys.xyz/" },
   { name: 'TROL', image: 'trol.png', url: "https://x.com/trolpumpscience" },
