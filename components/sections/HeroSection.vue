@@ -157,20 +157,36 @@ const showToast = ref(false);
 const tokenPrice = ref<number | null>(null);
 const priceError = ref<string | null>(null);
 
-const { data, error, refresh } = await useFetch('/api/token-price', { immediate: true, lazy: false });
+// 使用 lazy: true 和 server: false 来避免阻塞页面加载
+const { data, error, refresh } = await useFetch('/api/token-price', {
+  immediate: false,
+  lazy: true,
+  server: false,
+  timeout: 5000 // 5秒超时
+});
 
-if (error.value) {
-  priceError.value = 'Error fetching price';
-  console.error('Failed to fetch token price:', error.value);
-} else if (data.value) {
-  // Assuming the API returns { price: number } or { error: string }
-  if ((data.value as any).error) {
-    priceError.value = (data.value as any).error;
-    console.error('API error:', (data.value as any).details);
-  } else {
-    tokenPrice.value = (data.value as any).price;
+// 在客户端异步获取价格数据
+onMounted(async () => {
+  try {
+    await refresh();
+
+    if (error.value) {
+      priceError.value = 'Price service unavailable';
+      console.warn('Token price service unavailable:', error.value);
+    } else if (data.value) {
+      // Assuming the API returns { price: number } or { error: string }
+      if ((data.value as any).error) {
+        priceError.value = (data.value as any).error;
+        console.warn('API returned error:', (data.value as any).details);
+      } else {
+        tokenPrice.value = (data.value as any).price || 0;
+      }
+    }
+  } catch (err) {
+    priceError.value = 'Price service unavailable';
+    console.warn('Failed to fetch token price:', err);
   }
-}
+});
 
 const formattedPrice = computed(() => {
   if (priceError.value) {
